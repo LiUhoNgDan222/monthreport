@@ -6,7 +6,7 @@
     </div>
     <div id="middleMessage">
       <!--<h3>{{endPageData.releseDate}}</h3>-->
-      <h3>2019-09-04</h3>
+      <h3>2019-10-15</h3>
     </div>
     <div id="alertMessage">
       <!--<h3>{{endPageData.releseDate}}</h3>-->

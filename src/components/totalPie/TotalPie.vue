@@ -6,10 +6,10 @@
         在<span>{{userNumSeriesList.statisMonth}}</span>，长安车联网乘用车大家庭<br/>
         新增<span>{{userNumSeriesList.newUserNum}}</span>名用户，<br/>同比增长<span>{{userNumSeriesList.yoy}}%</span>，环比增加<span>{{userNumSeriesList.qoq}}%</span>，<br/>
         累计用户数达<span>{{userNumSeriesList.accUserNum}}</span>名<br/>
-        （乘用+欧尚累计用户数达<span>{{userNumSeriesList.totalUserNum}}</span>名）
+<!--        （乘用+欧尚累计用户数达<span>{{userNumSeriesList.totalUserNum}}</span>名）-->
       </div>
       <div id="dataPie" :style="{width: '100%', height: pieHeight + 'px',margin:'3% 0 0 0'}"></div>
-      <div class="page">1/22</div>
+      <div class="page">1/27</div>
     </div>
 </template>
 
@@ -26,12 +26,9 @@
       }
     },
     mounted(){
-      console.log('高度');
-      console.log(this.pieHeight);
     },
     methods: {
       initTotalPie() {
-        console.log("初始化totalPie");
         const totalJson = [];
         for(var i=0;i<this.userNumSeriesList.totalItem.length;i++){
           const json = {};
@@ -42,6 +39,7 @@
         this.drawLine(totalJson);
         this.$emit('delay')
       },
+
       drawLine(totalJson){
         let me = this;
         // 基于准备好的dom，初始化echarts实例
@@ -53,9 +51,20 @@
             formatter: "{a} <br/>{b}: {c} ({d}%)",
             position: ['40%', '40%']
           },
+          color:[
+            '#004595',
+            '#EEAF00',
+            '#EB595F',
+            '#9FB934',
+            '#00A0E9',
+            '#888889',
+            '#FF5809',
+            '#B15BFF',
+            '#2ec7c9',
+            '#ffb980',
+          ],
           legend: {
             data: me.userNumSeriesList.totalItem,
-            color:['#32A8FF',' #02C800',],
             orient:'horizontal',
             bottom: 0,
             textStyle:{
@@ -66,7 +75,7 @@
             itemGap: 20,
             itemWidth:14,
             itemHeight: 5,
-            width: 260
+            width: 300
           },
           series: [
             {
@@ -74,26 +83,9 @@
               type:'pie',
               radius : '55%',
               center: ['48%', '40%'],
+              startAngle: 50,
               minAngle: 9,
               avoidLabelOverlap:false,
-              color:['#32A8FF',' #02C800'],
-              itemStyle:{
-                normal:{
-                  color: function (params){
-                    var colorList = [
-                      '#888889',
-                      '#EB595F',
-                      '#9FB934',
-                      '#00A0E9',
-                      '#EEAF00',
-                      '#004595',
-                      '#B15BFF',
-                      '#FF5809'
-                    ];
-                    return colorList[params.dataIndex];
-                  },
-                }
-              },
               // roseType: 'radius',
               data:totalJson,
               label: {
@@ -103,8 +95,8 @@
                   },
                   formatter: function(params) {
                     let str;
-                    if(params.value < 9400 && params.value > 9355){
-                      str = '\n'+params.value;
+                    if(params.value < 442 && params.value > 94){
+                      str = params.value + '\n\n';
                     }else{
                       str = params.value + '\n';
                     }
@@ -112,24 +104,6 @@
                   },
                 },
               },
-              labelLine: {
-                normal: {
-                  color: function (params){
-                    var colorList = [
-                      '#888889',
-                      '#EB595F',
-                      '#9FB934',
-                      '#00A0E9',
-                      '#EEAF00',
-                      '#004595',
-                      '#B15BFF',
-                      '#FF5809'
-                    ];
-                    return colorList[params.dataIndex];
-                  },
-                }
-              },
-
               animationType: 'scale',
               animationEasing: 'elasticOut',
               animationDelay: function (idx) {

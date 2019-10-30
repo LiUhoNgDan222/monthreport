@@ -7,12 +7,12 @@
 
     <div id="userTurn" :style="{width: '90%', height: barHeight1+'px', margin: '0 0 20px 0'}"></div>
 
-<!--    <div class="subtitle2">各车型趋势分析</div>-->
-    <div id="userTrend" :style="{width: '100%', height: barHeight2+'px', margin: '20px 0 0 0'}"></div>
+    <div class="subtitle2">主要车型实名认证率趋势分析</div>
+    <div id="userTrend" :style="{width: '100%', height: barHeight2+'px', margin: '10px 0 0 0'}"></div>
     <div class="boxStyle">
-      智能网联搭载率及实名认证率持续<span> 上升 </span>
+      除了CS75-PLUS新车上市外，其余主要车型都从<span> 2019年7月 </span>开始呈<span> 下降 </span>趋势。
     </div>
-    <div class="page">2/22</div>
+    <div class="page">2/27</div>
   </div>
 </template>
 
@@ -22,11 +22,30 @@
   export default {
     name: "TotalUser",
     components: {Drawer},
-    props: ["totalUserList"],
     data() {
       return {
         barHeight1: window.innerHeight * 0.22,
-        barHeight2: window.innerHeight * 0.3
+        barHeight2: window.innerHeight * 0.33,
+        funnelData: [
+          {value:80, name:'期间产量'},
+          {value:60, name:'联网搭载 36.1%'},
+          {value:40, name:'终端实销 74.1%'},
+          {value:20, name:'车辆激活 83.9%'},
+        ],
+        funnelData1: [
+          {value:80, name:'465017'},
+          {value:60, name:'168109'},
+          {value:40, name:'124617'},
+          {value:20, name:'104549'},
+        ],
+        legend: ['CS35','CS55','新CS75','CS75-PLUS','CS95','逸动',],
+        monthList: ['2019-01','2019-02','2019-03','2019-04','2019-05','2019-06','2019-07','2019-08','2019-09'],
+        lineData: [97.7,97.8,97,97.7,97.8,97.2,97.1,92,87.3],
+        lineData1: [96.1,90.3,100,93.4,92.8,94.5,97.6,85,88.1],
+        lineData2: [97.1,97.6,97,96.7,96.8,95.7,95.7,91.2,83.2],
+        lineData3: [,,,,,84.6,94.4,96.3,95.1],
+        lineData4: [85.3,73.1,80,93.3,92.5,92.0,91.5,90.7,83.2],
+        lineData5: [95.3,97.1,95.1,97.2,95.6,94.2,97.3,90.8,83.4],
       }
     },
     mounted(){
@@ -62,7 +81,7 @@
               minSize: '30%',
               maxSize: '100%',
               x: '15%',
-              data: me.totalUserList.funnelData
+              data: me.funnelData
             },
             {
               name:'漏斗图',
@@ -79,12 +98,7 @@
                   position: 'inside',
                 },
               },
-              data: [
-                {value:80, name:'498841'},
-                {value:60, name:'155336'},
-                {value:40, name:'104389'},
-                {value:20, name:'83707'},
-              ]
+              data: me.funnelData1
             }
           ]
         });
@@ -95,30 +109,51 @@
         let monthTrendLine = this.$echarts.init(document.getElementById('userTrend'));
         // 绘制图表
         monthTrendLine.setOption({
+          color: [
+            '#00A0E9',
+            '#EEAF00',
+            '#EB595F',
+            '#9FB934',
+            '#B15BFF',
+            '#ffb980',
+            '#FF5809',
+            '#2ec7c9',
+          ],
           grid: {
-            left: '20%',
+            left: '16%',
             right: '9%',
-            top: '20%',
+            top: '24%',
             bottom: '25%'
           },
           tooltip: {
             show: true,
             trigger: 'axis',
-            formatter: '{b0}<br/>{a0}:{c0}%<br/>{a1}:{c1}%'
+            // formatter: '{b}<br/>{a0}:{c0}%<br/>{a1}:{c1}%<br/>{a2}:{c2}%<br/>',
+            position: function (pos, params, dom, rect, size) {
+              // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+              var obj = {top: 60};
+              obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = '10%';
+              return obj;
+            },
+            textStyle:{
+              align:'left',
+            },
           },
           legend: {
-            data:['智能网联搭载率','实名认证率'],
+            data: this.legend,
             itemHeight: 6,
             textStyle: {
               color: 'grey'
             },
             // orient: 'vertical',
-            top: '10%',
-            left: '25%'
+            // top: '10%',
+            left: '10%',
+            right: '10%'
           },
           xAxis: {
             type: 'category',
-            data:me.totalUserList.monthList,
+            data:me.monthList,
+            boundaryGap: false,
             splitLine:{
               show: true,
               lineStyle: {
@@ -144,6 +179,7 @@
           yAxis: {
             // name: '比例',
             type: 'value',
+            min: 70,
             splitLine:{
               show: true,
               lineStyle: {
@@ -167,27 +203,60 @@
             },
           },
           series: [{
-            name: '智能网联搭载率',
-            data: me.totalUserList.userPerMonthAlls,
+            name: me.legend[0],
+            data: me.lineData,
             type: 'line',
             barWidth: 7,
             itemStyle: {
-              color: '#EEAF00',
               opacity: 0.8,
               barBorderRadius: [5, 5, 0, 0],
             },
-          },
-            {
-              name: '实名认证率',
-              data: me.totalUserList.userPerMonthCAs,
-              type: 'line',
-              barWidth: 7,
-              itemStyle: {
-                color: '#00A0E9',
-                opacity: 0.8,
-                barBorderRadius: [5, 5, 0, 0],
-              },
-            }]
+          },{
+            name: me.legend[1],
+            data: me.lineData1,
+            type: 'line',
+            barWidth: 7,
+            itemStyle: {
+              opacity: 0.8,
+              barBorderRadius: [5, 5, 0, 0],
+            },
+          },{
+            name: me.legend[2],
+            data: me.lineData2,
+            type: 'line',
+            barWidth: 7,
+            itemStyle: {
+              opacity: 0.8,
+              barBorderRadius: [5, 5, 0, 0],
+            },
+          },{
+            name: me.legend[3],
+            data: me.lineData3,
+            type: 'line',
+            barWidth: 7,
+            itemStyle: {
+              opacity: 0.8,
+              barBorderRadius: [5, 5, 0, 0],
+            },
+          },{
+            name: me.legend[4],
+            data: me.lineData5,
+            type: 'line',
+            barWidth: 7,
+            itemStyle: {
+              opacity: 0.8,
+              barBorderRadius: [5, 5, 0, 0],
+            },
+          },{
+            name: me.legend[5],
+            data: me.lineData5,
+            type: 'line',
+            barWidth: 7,
+            itemStyle: {
+              opacity: 0.8,
+              barBorderRadius: [5, 5, 0, 0],
+            },
+          }]
         });
       }
     }

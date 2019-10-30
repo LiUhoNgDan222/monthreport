@@ -21,12 +21,13 @@
           <p class="item cover"></p>
           <p class="menuTitle">目录</p>
           <p class="menuItem" @click="changePage(2)" :style="bg1">总体概况</p>
-          <div class="menuItem menuItem1" :style="bg2">
-            <p @click="changePage(4)">人群习惯分析</p>
+          <p class="menuItem" @click="changePage(4)" :style="bg2">CS75-PLUS联网专题</p>
+          <div class="menuItem menuItem1" :style="bg3">
+            <p @click="changePage(13)">国庆出游专题</p>
             <ul>
-              <li @click="changePage(5)">2.1 按车系区分人群</li>
-              <li @click="changePage(11)">2.2 按常驻城市区分人群</li>
-              <li @click="changePage(17)">2.3 按用户特性区分人群</li>
+              <li @click="changePage(14)">3.1 智能网联用户出游概况</li>
+              <li @click="changePage(21)">3.2 新CS75出游用户分析</li>
+              <li @click="changePage(26)">3.3 重点区域出游分析</li>
             </ul>
           </div>
 
@@ -49,13 +50,132 @@
         <swiper-slide :style="bg">
           <p class="item cover"></p>
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <TotalUser :totalUserList="totalUserList" ref="totalUserRef"></TotalUser>
+          <TotalUser ref="totalUserRef"></TotalUser>
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—用户.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—实名认证率.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—平均日活跃率.png" alt="">
+        </swiper-slide>
+
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75PlusPreference ref="CS75PlusPreferenceRef"></CS75PlusPreference>
         </swiper-slide>
         <swiper-slide :style="bg">
           <p class="item cover"></p>
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <DoublePie  ref="doublePieRef"></DoublePie>
+          <CS75PlusSuccess ref="CS75PlusSuccessRef"></CS75PlusSuccess>
         </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—TOP5远控功能.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—各车型配置.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—用户反馈分析.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/CS75-PLUS专题—智问小安分析.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/国庆出游专题提要.png" alt="">
+        </swiper-slide>
+
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <OutingTotalPie ref="OutingTotalPieRef"></OutingTotalPie>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <OutingDay ref="OutingDayRef"></OutingDay>
+        </swiper-slide>
+
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/用户基本分析.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/旅游热度最高的城市.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/十大热门景点.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/最爱旅游的省份.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/最爱旅游的车系.png" alt="">
+        </swiper-slide>
+
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <OutingApp ref="OutingAppRef"></OutingApp>-->
+<!--        </swiper-slide>-->
+
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/新CS75出游用户分析—最爱听的歌.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/新CS75出游用户分析—最爱听的电台.png" alt="">
+        </swiper-slide>
+
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <OutingAcc ref="OutingAccRef"></OutingAcc>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <OutingParking ref="OutingParkingRef"></OutingParking>
+        </swiper-slide>
+
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/地域专题分析—川渝.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/地域专题分析—江浙沪.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/地域专题分析—广东.png" alt="">
+        </swiper-slide>
+        <swiper-slide style="background: #004595;overflow: hidden">
+          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
+          <img class="image" src="./img/地域专题分析—东三省.png" alt="">
+        </swiper-slide>
+
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <DoublePie  ref="doublePieRef"></DoublePie>-->
+<!--        </swiper-slide>-->
 
 <!--        <swiper-slide :style="bg">-->
 <!--          <p class="item cover"></p>-->
@@ -81,87 +201,11 @@
 <!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
 <!--          <PhoneAnalyse></PhoneAnalyse>-->
 <!--        </swiper-slide>-->
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（驾驶里程分析） .png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（驾驶行程分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（用车时段分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（行驶道路类型分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（远程控制使用分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/车系（车载应用使用分析） .png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）驾驶里程分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）驾驶行程分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）用车时段分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）行驶道路类型分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）远程控制使用分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/城市（常驻城市）车载应用使用分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（驾驶里程分析）.png" alt="">
-        </swiper-slide>
 <!--        <swiper-slide :style="bg">-->
 <!--          <p class="item cover"></p>-->
 <!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
 <!--          <FeedbackPie :feedbackData="feedbackData" ref="feedbackRef"></FeedbackPie>-->
 <!--        </swiper-slide>-->
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（驾驶行程分析） .png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（用车时段分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（行驶道路类型分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（远程控制使用分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户特征（车载应用使用分析）.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/专题总结.png" alt="">
-        </swiper-slide>
         <!--<swiper-slide :style="bg">-->
           <!--<p class="item cover"></p>-->
           <!--<Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
@@ -302,8 +346,8 @@
 </template>
 
 <script>
-  import $ from 'jquery'
-  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+  import $ from 'jquery';
+  import { swiper, swiperSlide } from 'vue-awesome-swiper';
   import { Toast } from 'mint-ui';
   // import Loading from "../Loading/Loading";
   import Menu from "../menu/Menu";
@@ -311,27 +355,34 @@
   import TotalPie from "../totalPie/TotalPie";
   import DoublePie from "../doublePie/DoublePie";
   import TotalUser from "../totalUser/TotalUser";
-  import TrendAnalyse from "../TrendAnalyse/TrendAnalyse"
-  import UserAnalyse from "../userAnalyse/UserAnalyse"
-  import TotalLine from "../totalLine/TotalLine"
+  import CS75PlusPreference from "../CS75PlusDistribution/CS75PlusPreference";
+  import CS75PlusSuccess from "../CS75PlusDistribution/CS75PlusSuccess";
+  import OutingTotalPie from "../NationalDayOuting/OutingTotalPie";
+  import OutingDay from "../NationalDayOuting/OutingDay";
+  import OutingApp from "../NationalDayOuting/OutingApp";
+  import OutingAcc from "../NationalDayOuting/OutingAcc";
+  import OutingParking from "../NationalDayOuting/OutingParking";
+  // import TrendAnalyse from "../TrendAnalyse/TrendAnalyse"
+  // import UserAnalyse from "../userAnalyse/UserAnalyse"
+  // import TotalLine from "../totalLine/TotalLine"
   // import CarVsSUV from "../CarVsSUV/CarVsSUV"
-  import MainCity from "../MainCity/MainCity"
-  import CarTypeOil from "../CarTypeOil/CarTypeOil"
-  import RegionalFuel from "../RegionalFuel/RegionalFuel"
-  import RegionalCityFuel from "../RegionalCityFuel/RegionalCityFuel"
-  import WorkingDayOil from "../WorkingDayOil/WorkingDayOil"
-  import MileCondition from "../MileCondition/MileCondition"
-  import UseNumber from "../UseNumber/UseNumber"
-  import TotalFuncNumber from "../TotalFuncNumber/TotalFuncNumber"
-  import C211FuncNumber from "../C211FuncNumber/C211FuncNumber"
-  import FunctionPreferCity from "../regionalPrefer/functionPreferCity"
-  import functionPreferRegion from "../regionalPrefer/functionPreferRegion"
-  import remotePreferCity from "../regionalPrefer/remotePreferCity"
-  import remotePreferRegion from "../regionalPrefer/remotePreferRegion"
-  import FunctionUseNumber from "../FunctionUseNumber/FunctionUseNumber"
-  import inOut from "../inOut/inOut"
+  // import MainCity from "../MainCity/MainCity"
+  // import CarTypeOil from "../CarTypeOil/CarTypeOil"
+  // import RegionalFuel from "../RegionalFuel/RegionalFuel"
+  // import RegionalCityFuel from "../RegionalCityFuel/RegionalCityFuel"
+  // import WorkingDayOil from "../WorkingDayOil/WorkingDayOil"
+  // import MileCondition from "../MileCondition/MileCondition"
+  // import UseNumber from "../UseNumber/UseNumber"
+  // import TotalFuncNumber from "../TotalFuncNumber/TotalFuncNumber"
+  // import C211FuncNumber from "../C211FuncNumber/C211FuncNumber"
+  // import FunctionPreferCity from "../regionalPrefer/functionPreferCity"
+  // import functionPreferRegion from "../regionalPrefer/functionPreferRegion"
+  // import remotePreferCity from "../regionalPrefer/remotePreferCity"
+  // import remotePreferRegion from "../regionalPrefer/remotePreferRegion"
+  // import FunctionUseNumber from "../FunctionUseNumber/FunctionUseNumber"
+  // import inOut from "../inOut/inOut"
   // import FunctionUseTimes from "../FunctionUseTimes/FunctionUseTimes"
-  import TeleControl from "../TeleControl/TeleControl"
+  // import TeleControl from "../TeleControl/TeleControl"
   // import Algorithm from "../OilDistribution/Algorithm"
   // import CS55Oil from "../OilDistribution/CS55Oil"
   // import CS75Oil from "../OilDistribution/CS75Oil"
@@ -339,13 +390,13 @@
   // import CS75Engine from "../CS75Distribution/CS75Engine"
   // import CS75Speed from "../CS75Distribution/CS75Speed"
   // import CS75Accelerate from "../CS75Distribution/CS75Accelerate"
-  import FeedbackPie from "../FeedbackAnalyse/FeedbackPie"
+  // import FeedbackPie from "../FeedbackAnalyse/FeedbackPie"
   // import ThousandFeedback from "../FeedbackAnalyse/ThousandFeedback"
-  import TeleControlTrend from "../TeleControl/TeleControlTrend"
-  import PhoneAnalyse from "../PhoneAnalyse/PhoneAnalyse"
+  // import TeleControlTrend from "../TeleControl/TeleControlTrend"
+  // import PhoneAnalyse from "../PhoneAnalyse/PhoneAnalyse"
   import Feedback from "../Feedback/Feedback"
   import Presentation from "../presentation/Presentation"
-  import FuncTrend from "../C211FuncNumber/FuncTrend"
+  // import FuncTrend from "../C211FuncNumber/FuncTrend"
   import EndPage from "../EndPage/EndPage"
   import {getAllData} from '@/service/getData'
   import * as swiperAni from '../../assets/js/swiper.animate1.0.3.min.js';
@@ -359,26 +410,33 @@
       TotalPie,
       DoublePie,
       TotalUser,
-      TotalLine,
-      TrendAnalyse,
-      UserAnalyse,
-      // CarVsSUV,
-      MainCity,
-      CarTypeOil,
-      RegionalFuel,
-      RegionalCityFuel,
-      WorkingDayOil,
-      MileCondition,
-      UseNumber,
-      TotalFuncNumber,
-      C211FuncNumber,
-      FunctionPreferCity,
-      functionPreferRegion,
-      remotePreferCity,
-      remotePreferRegion,
-      FunctionUseNumber,
+      CS75PlusPreference,
+      CS75PlusSuccess,
+      OutingTotalPie,
+      OutingDay,
+      OutingApp,
+      OutingAcc,
+      OutingParking,
+      // TotalLine,
+      // TrendAnalyse,
+      // UserAnalyse,
+      // // CarVsSUV,
+      // MainCity,
+      // CarTypeOil,
+      // RegionalFuel,
+      // RegionalCityFuel,
+      // WorkingDayOil,
+      // MileCondition,
+      // UseNumber,
+      // TotalFuncNumber,
+      // C211FuncNumber,
+      // FunctionPreferCity,
+      // functionPreferRegion,
+      // remotePreferCity,
+      // remotePreferRegion,
+      // FunctionUseNumber,
       // FunctionUseTimes,
-      TeleControl,
+      // TeleControl,
       // Algorithm,
       // CS55Oil,
       // CS75Oil,
@@ -386,15 +444,15 @@
       // CS75Engine,
       // CS75Speed,
       // CS75Accelerate,
-      FeedbackPie,
+      // FeedbackPie,
       // ThousandFeedback,
-      FuncTrend,
-      TeleControlTrend,
-      PhoneAnalyse,
+      // FuncTrend,
+      // TeleControlTrend,
+      // PhoneAnalyse,
       Feedback,
       Presentation,
       EndPage,
-      inOut,
+      // inOut,
       swiper,
       swiperSlide,
       Toast,
@@ -485,26 +543,14 @@
           dateEnd: '',
         },
         userNumSeriesList: {
-          accUserNum: '',
-          newUserNum : '',
-          statisMonth: '',
+          accUserNum: 215262,
+          newUserNum : 22169,
+          statisMonth: '09月',
           totalUserNum: '',
-          totalItem: [],
-          totalData: [],
-          qoq: '',
-          yoy: ''
-        },
-        totalUserList: {
-          legend: ['期间产量','联网搭载','终端实销','车辆激活'],
-          funnelData: [
-            {value:80, name:'期间产量'},
-            {value:60, name:'联网搭载 31.1%'},
-            {value:40, name:'终端实销 67.2%'},
-            {value:20, name:'车辆激活 80.2%'},
-          ],
-          monthList: ['2019-01','2019-02','2019-03','2019-04','2019-05','2019-06','2019-07','2019-08'],
-          userPerMonthAlls: [16.9,17.9,19.6,20.5,20.8,21.3,20.3,23.3],
-          userPerMonthCAs: [91.2,92.1,93.3,93.8,93.2,93.1,94.5,94.7],
+          totalItem: ['新CS75','CS75-PLUS','CS35','CS85-COUPE','逸动','CS95','CS55','CS75','睿骋CC','新CS15',],
+          totalData: [7473,7168,3444,2129,1258,442,122,94,32,2,],
+          qoq: 0.35,
+          yoy: 1.24
         },
         trendAnalyseList: {
           monthList: [],
@@ -759,7 +805,7 @@
       if(me.getMonth() !=null && me.getMonth ().toString().length>1){
         month = me.getMonth();
       }
-      getAllData(month, getDataSuccess, getDataFail);
+      // getAllData(month, getDataSuccess, getDataFail);
       me.swiperOption.on.slideChangeTransitionStart = me.slideChangeTransitionStartFunc;
     },
 
@@ -806,7 +852,7 @@
         let timeGap = (me.swiperTimeEnd.getTime()-me.swiperTimeStart.getTime())/1000;
         let index = this.swiper.activeIndex + 1;
         me.swiperTimeStart = new Date();
-        _czc.push(["_trackEvent",'8月月报','浏览页面',index.toString(),timeGap.toString(),'']);
+        _czc.push(["_trackEvent",'9月&国庆月报','浏览页面',index.toString(),timeGap.toString(),'']);
       },
 
       changePage: function(index) {
@@ -830,25 +876,25 @@
 
 
       setInfo: function(response) {
-        let data = response.data.data;
+        // let data = response.data.data;
         let me = this;
 
         //存入组件totalPie的数据
         if(me.$refs.userNumSeriesListRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.userNumSeriesListRef.$parent.$el.classList[1] === 'swiper-slide-active'){
-          const totalItem = [];
-          const totalData = [];
-          for (var i = 0; i < data.generalOverView.seriesUserNums.length; i++) {
-            totalItem.push(data.generalOverView.seriesUserNums[i].seriesName);
-            totalData.push(data.generalOverView.seriesUserNums[i].userNum);
-          }
-          me.userNumSeriesList.totalItem = totalItem;
-          me.userNumSeriesList.totalData = totalData;
-          me.userNumSeriesList.newUserNum = data.generalOverView.newUserNum;
-          me.userNumSeriesList.accUserNum = data.generalOverView.accUserNum;
-          me.userNumSeriesList.totalUserNum = data.generalOverView.totalUserNum;
-          me.userNumSeriesList.statisMonth = data.generalOverView.statisMonth.substring(5, 7) + '月';
-          me.userNumSeriesList.qoq = data.generalOverView.qoqGrowthRatio;
-          me.userNumSeriesList.yoy = data.generalOverView.yoyGrowthRatio;
+          // const totalItem = [];
+          // const totalData = [];
+          // for (var i = 0; i < data.generalOverView.seriesUserNums.length; i++) {
+          //   totalItem.push(data.generalOverView.seriesUserNums[i].seriesName);
+          //   totalData.push(data.generalOverView.seriesUserNums[i].userNum);
+          // }
+          // me.userNumSeriesList.totalItem = totalItem;
+          // me.userNumSeriesList.totalData = totalData;
+          // me.userNumSeriesList.newUserNum = data.generalOverView.newUserNum;
+          // me.userNumSeriesList.accUserNum = data.generalOverView.accUserNum;
+          // me.userNumSeriesList.totalUserNum = data.generalOverView.totalUserNum;
+          // me.userNumSeriesList.statisMonth = data.generalOverView.statisMonth.substring(5, 7) + '月';
+          // me.userNumSeriesList.qoq = data.generalOverView.qoqGrowthRatio;
+          // me.userNumSeriesList.yoy = data.generalOverView.yoyGrowthRatio;
           if(me.$refs.userNumSeriesListRef){
             me.$refs.userNumSeriesListRef.initTotalPie();
           }
@@ -891,13 +937,76 @@
           return;
         }
 
-        //存入组件doublePie的数据
-        if(me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
-          if(me.$refs.doublePieRef){
-            me.$refs.doublePieRef.init();
+        //存入组件CS75PlusPreference的数据
+        if(me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.CS75PlusPreferenceRef){
+            me.$refs.CS75PlusPreferenceRef.init();
           }
           return;
         }
+
+        //存入组件CS75PlusSuccess的数据
+        if(me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.CS75PlusSuccessRef){
+            me.$refs.CS75PlusSuccessRef.init();
+          }
+          return;
+        }
+
+        //存入组件OutingTotalPie的数据
+        if(me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.OutingTotalPieRef){
+            me.$refs.OutingTotalPieRef.init();
+          }
+          return;
+        }
+
+        //存入组件OutingDay的数据
+        if(me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.OutingDayRef){
+            me.$refs.OutingDayRef.init();
+          }
+          return;
+        }
+
+        // //存入组件OutingApp的数据
+        // if(me.$refs.OutingAppRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingAppRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.OutingAppRef){
+        //     me.$refs.OutingAppRef.init();
+        //   }
+        //   return;
+        // }
+
+        //存入组件OutingAcc的数据
+        if(me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.OutingAccRef){
+            me.$refs.OutingAccRef.init();
+          }
+          return;
+        }
+
+        //存入组件OutingParking的数据
+        if(me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.OutingParkingRef){
+            me.$refs.OutingParkingRef.init();
+          }
+          return;
+        }
+
+        // //存入组件doublePie的数据
+        // if(me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //   if(me.$refs.doublePieRef){
+        //     me.$refs.doublePieRef.init();
+        //   }
+        //   return;
+        // }
 
 
 
@@ -1598,6 +1707,7 @@
   .menuItem1 p {
     padding-top: 0.9rem;
     margin-bottom: 0.2rem;
+    margin-top: 0;
   }
 
   .menuItem1 ul {
