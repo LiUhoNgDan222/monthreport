@@ -2,13 +2,10 @@
   <div class="menuLeft" @click.stop="clickMenu">
     <img class="menuIcon" src="./img/menu.png" v-show="!isClicked"/>
     <div v-show="isClicked">
-      <ul class="menuList" :style="{width: '5.28rem', height: menuHeight+'px'}" @click.stop="">
+      <ul class="menuList" :style="{width: '6rem', height: menuHeight+'px'}" @click.stop="">
         <li class="menuListItem" @click.stop="change(2)"><img class="listIcon" :src=imgList1[0] /><span>总体概况</span></li>
-        <li class="menuListItem" @click.stop="change(4)"><img class="listIcon" :src=imgList1[1] /><span>CS75-PLUS联网专题</span></li>
-        <li class="menuListItem" @click.stop="change(13)"><img class="listIcon" :src=imgList1[2] /><span>国庆出游专题</span></li>
-        <li class="menuListItem menuListItem1" @click.stop="change(14)"><span>3.1 智能网联用户出游概况</span></li>
-        <li class="menuListItem menuListItem1" @click.stop="change(21)"><span>3.2 新CS75出游用户分析</span></li>
-        <li class="menuListItem menuListItem1" @click.stop="change(26)"><span>3.3 重点区域出游分析</span></li>
+        <li class="menuListItem" @click.stop="change(6)"><img class="listIcon" :src=imgList1[1] /><span>CS75-PLUS新车分析专题</span></li>
+        <li class="menuListItem" @click.stop="change(15)"><img class="listIcon" :src=imgList1[2] /><span>新CS75驾驶功能分析专题</span></li>
       </ul>
     </div>
   </div>
@@ -48,20 +45,20 @@
         console.log("进入index函数");
         let me = this;
 
-        if(newValue <= 3 && newValue >= 2){
+        if(newValue <= 5 && newValue >= 2){
           me.imgList1[0] = require("./img/1-2.png");
           me.imgList1[1] = require("./img/2-1.png");
           me.imgList1[2] = require("./img/3-1.png");
           me.imgList1[3] = require("./img/4-1.png");
           me.imgList1[4] = require("./img/5-1.png");
         }
-        if(newValue <= 12 && newValue >= 4){
+        if(newValue <= 14 && newValue >= 6){
           me.imgList1[0] = require("./img/1-1.png");
           me.imgList1[1] = require("./img/2-2.png");
           me.imgList1[2] = require("./img/3-1.png");
           me.imgList1[3] = require("./img/4-1.png");
           me.imgList1[4] = require("./img/5-1.png");
-        }else if(newValue <= 29 && newValue >= 13){
+        }else if(newValue <= 21 && newValue >= 15){
           me.imgList1[2] = require("./img/3-2.png");
           me.imgList1[0] = require("./img/1-1.png");
           me.imgList1[1] = require("./img/2-1.png");
@@ -144,7 +141,7 @@
 
   .menuListItem span{
     position: absolute;
-    left: 1.5rem
+    left: 1.3rem
   }
 
   .menuListItem1 span {

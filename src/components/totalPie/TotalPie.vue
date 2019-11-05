@@ -9,7 +9,7 @@
 <!--        （乘用+欧尚累计用户数达<span>{{userNumSeriesList.totalUserNum}}</span>名）-->
       </div>
       <div id="dataPie" :style="{width: '100%', height: pieHeight + 'px',margin:'3% 0 0 0'}"></div>
-      <div class="page">1/27</div>
+      <div class="page">1/20</div>
     </div>
 </template>
 
@@ -83,7 +83,7 @@
               type:'pie',
               radius : '55%',
               center: ['48%', '40%'],
-              startAngle: 50,
+              startAngle: 60,
               minAngle: 9,
               avoidLabelOverlap:false,
               // roseType: 'radius',
@@ -95,7 +95,7 @@
                   },
                   formatter: function(params) {
                     let str;
-                    if(params.value < 442 && params.value > 94){
+                    if(params.value < 442 && params.value > 90){
                       str = params.value + '\n\n';
                     }else{
                       str = params.value + '\n';
@@ -123,7 +123,8 @@
   #title {
     width: 100%;
     margin: 0 auto;
-    font-size: 0.63rem;
+    /*font-size: 0.63rem;*/
+    font-size: 0.587rem;
     color: #444444;
     font-weight: bold;
     padding-top: 9%;

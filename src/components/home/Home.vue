@@ -21,15 +21,16 @@
           <p class="item cover"></p>
           <p class="menuTitle">目录</p>
           <p class="menuItem" @click="changePage(2)" :style="bg1">总体概况</p>
-          <p class="menuItem" @click="changePage(4)" :style="bg2">CS75-PLUS联网专题</p>
-          <div class="menuItem menuItem1" :style="bg3">
-            <p @click="changePage(13)">国庆出游专题</p>
-            <ul>
-              <li @click="changePage(14)">3.1 智能网联用户出游概况</li>
-              <li @click="changePage(21)">3.2 新CS75出游用户分析</li>
-              <li @click="changePage(26)">3.3 重点区域出游分析</li>
-            </ul>
-          </div>
+          <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">CS75-PLUS新车<br/>分析专题</p>
+          <p class="menuItem menuItem1" @click="changePage(15)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
+<!--          <div class="menuItem menuItem1" :style="bg3">-->
+<!--            <p @click="changePage(13)">国庆出游专题</p>-->
+<!--            <ul>-->
+<!--              <li @click="changePage(14)">3.1 智能网联用户出游概况</li>-->
+<!--              <li @click="changePage(21)">3.2 新CS75出游用户分析</li>-->
+<!--              <li @click="changePage(26)">3.3 重点区域出游分析</li>-->
+<!--            </ul>-->
+<!--          </div>-->
 
           <!--<p class="menuItem" @click="changePage(19)" :style="bg5">油耗分析</p>-->
 <!--          <div class="newContent">-->
@@ -52,81 +53,158 @@
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
           <TotalUser ref="totalUserRef"></TotalUser>
         </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—用户.png" alt="">
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <UserAnalyse :userAnalyseData="userAnalyseData" ref="userAnalyseDataRef"></UserAnalyse>
         </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—实名认证率.png" alt="">
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <MainCity :cityDistributionPage="cityDistributionPage" ref="cityDistributionPageRef"></MainCity>
         </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—平均日活跃率.png" alt="">
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/远程控制成功率.png" alt="">-->
+<!--        </swiper-slide>-->
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage1></ImagePage1>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage2></ImagePage2>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage3></ImagePage3>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage4></ImagePage4>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage5></ImagePage5>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage6></ImagePage6>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage7></ImagePage7>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage8></ImagePage8>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage9></ImagePage9>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <ImagePage10></ImagePage10>
+        </swiper-slide>
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/远程控制&incall活跃分析.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/用户首个使用的远程控制功能.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/用户最爱使用的远程控制功能.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/用户反馈分析.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/智问小安用户咨询分析.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/用户首个智问小安咨询问题类别.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/车辆故障分析.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/首次故障的里程.png" alt="">-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
+<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
+<!--          <img class="image" src="./img/新CS75驾驶功能分析专题.png" alt="">-->
+<!--        </swiper-slide>-->
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75AccNum ref="CS75AccNumRef"></CS75AccNum>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75AccMile ref="CS75AccMileRef"></CS75AccMile>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75AccDuration ref="CS75AccDurationRef"></CS75AccDuration>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75Parking ref="CS75ParkingRef"></CS75Parking>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75ParkingFunction ref="CS75ParkingFunctionRef"></CS75ParkingFunction>
+        </swiper-slide>
+        <swiper-slide :style="bg">
+          <p class="item cover"></p>
+          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
+          <CS75PilotedParking ref="CS75PilotedParkingRef"></CS75PilotedParking>
         </swiper-slide>
 
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <CS75PlusPreference ref="CS75PlusPreferenceRef"></CS75PlusPreference>
-        </swiper-slide>
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <CS75PlusSuccess ref="CS75PlusSuccessRef"></CS75PlusSuccess>
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—TOP5远控功能.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—各车型配置.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—用户反馈分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/CS75-PLUS专题—智问小安分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/国庆出游专题提要.png" alt="">
-        </swiper-slide>
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <CS75PlusPreference ref="CS75PlusPreferenceRef"></CS75PlusPreference>-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <CS75PlusSuccess ref="CS75PlusSuccessRef"></CS75PlusSuccess>-->
+<!--        </swiper-slide>-->
 
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <OutingTotalPie ref="OutingTotalPieRef"></OutingTotalPie>
-        </swiper-slide>
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <OutingDay ref="OutingDayRef"></OutingDay>
-        </swiper-slide>
-
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/用户基本分析.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/旅游热度最高的城市.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/十大热门景点.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/最爱旅游的省份.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/最爱旅游的车系.png" alt="">
-        </swiper-slide>
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <OutingTotalPie ref="OutingTotalPieRef"></OutingTotalPie>-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <OutingDay ref="OutingDayRef"></OutingDay>-->
+<!--        </swiper-slide>-->
 
 <!--        <swiper-slide :style="bg">-->
 <!--          <p class="item cover"></p>-->
@@ -134,42 +212,17 @@
 <!--          <OutingApp ref="OutingAppRef"></OutingApp>-->
 <!--        </swiper-slide>-->
 
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/新CS75出游用户分析—最爱听的歌.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/新CS75出游用户分析—最爱听的电台.png" alt="">
-        </swiper-slide>
 
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <OutingAcc ref="OutingAccRef"></OutingAcc>
-        </swiper-slide>
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <OutingParking ref="OutingParkingRef"></OutingParking>
-        </swiper-slide>
-
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/地域专题分析—川渝.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/地域专题分析—江浙沪.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/地域专题分析—广东.png" alt="">
-        </swiper-slide>
-        <swiper-slide style="background: #004595;overflow: hidden">
-          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>
-          <img class="image" src="./img/地域专题分析—东三省.png" alt="">
-        </swiper-slide>
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <OutingAcc ref="OutingAccRef"></OutingAcc>-->
+<!--        </swiper-slide>-->
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <OutingParking ref="OutingParkingRef"></OutingParking>-->
+<!--        </swiper-slide>-->
 
 <!--        <swiper-slide :style="bg">-->
 <!--          <p class="item cover"></p>-->
@@ -182,20 +235,10 @@
 <!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
 <!--          <MileCondition :milesRanges="milesRanges" ref="milesRangesRef"></MileCondition>-->
 <!--        </swiper-slide>-->
-<!--        <swiper-slide :style="bg">-->
-<!--          <p class="item cover"></p>-->
-<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
-<!--          <UserAnalyse :userAnalyseData="userAnalyseData" ref="userAnalyseDataRef"></UserAnalyse>-->
-<!--        </swiper-slide>-->
         <!--<swiper-slide :style="bg">-->
         <!--<p class="item cover"></p>-->
         <!--<CarVsSUV :seriesGenderRatio="seriesGenderRatio" ref="CarVsSUVRef"></CarVsSUV>-->
         <!--</swiper-slide>-->
-<!--        <swiper-slide :style="bg">-->
-<!--          <p class="item cover"></p>-->
-<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
-<!--          <MainCity :cityDistributionPage="cityDistributionPage" ref="cityDistributionPageRef"></MainCity>-->
-<!--        </swiper-slide>-->
 <!--        <swiper-slide :style="bg">-->
 <!--          <p class="item cover"></p>-->
 <!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
@@ -355,18 +398,34 @@
   import TotalPie from "../totalPie/TotalPie";
   import DoublePie from "../doublePie/DoublePie";
   import TotalUser from "../totalUser/TotalUser";
-  import CS75PlusPreference from "../CS75PlusDistribution/CS75PlusPreference";
-  import CS75PlusSuccess from "../CS75PlusDistribution/CS75PlusSuccess";
-  import OutingTotalPie from "../NationalDayOuting/OutingTotalPie";
-  import OutingDay from "../NationalDayOuting/OutingDay";
-  import OutingApp from "../NationalDayOuting/OutingApp";
-  import OutingAcc from "../NationalDayOuting/OutingAcc";
-  import OutingParking from "../NationalDayOuting/OutingParking";
+  import CS75AccNum from "../CS75Distribution/CS75AccNum";
+  import CS75AccMile from "../CS75Distribution/CS75AccMile";
+  import CS75AccDuration from "../CS75Distribution/CS75AccDuration";
+  import CS75Parking from "../CS75Distribution/CS75Parking";
+  import CS75ParkingFunction from "../CS75Distribution/CS75ParkingFunction";
+  import CS75PilotedParking from "../CS75Distribution/CS75PilotedParking";
+  import ImagePage1 from "../ImagePage/ImagePage1";
+  import ImagePage2 from "../ImagePage/ImagePage2";
+  import ImagePage3 from "../ImagePage/ImagePage3";
+  import ImagePage4 from "../ImagePage/ImagePage4";
+  import ImagePage5 from "../ImagePage/ImagePage5";
+  import ImagePage6 from "../ImagePage/ImagePage6";
+  import ImagePage7 from "../ImagePage/ImagePage7";
+  import ImagePage8 from "../ImagePage/ImagePage8";
+  import ImagePage9 from "../ImagePage/ImagePage9";
+  import ImagePage10 from "../ImagePage/ImagePage10";
+  // import CS75PlusPreference from "../CS75PlusDistribution/CS75PlusPreference";
+  // import CS75PlusSuccess from "../CS75PlusDistribution/CS75PlusSuccess";
+  // import OutingTotalPie from "../NationalDayOuting/OutingTotalPie";
+  // import OutingDay from "../NationalDayOuting/OutingDay";
+  // import OutingApp from "../NationalDayOuting/OutingApp";
+  // import OutingAcc from "../NationalDayOuting/OutingAcc";
+  // import OutingParking from "../NationalDayOuting/OutingParking";
   // import TrendAnalyse from "../TrendAnalyse/TrendAnalyse"
-  // import UserAnalyse from "../userAnalyse/UserAnalyse"
+  import UserAnalyse from "../userAnalyse/UserAnalyse"
   // import TotalLine from "../totalLine/TotalLine"
   // import CarVsSUV from "../CarVsSUV/CarVsSUV"
-  // import MainCity from "../MainCity/MainCity"
+  import MainCity from "../MainCity/MainCity"
   // import CarTypeOil from "../CarTypeOil/CarTypeOil"
   // import RegionalFuel from "../RegionalFuel/RegionalFuel"
   // import RegionalCityFuel from "../RegionalCityFuel/RegionalCityFuel"
@@ -410,18 +469,34 @@
       TotalPie,
       DoublePie,
       TotalUser,
-      CS75PlusPreference,
-      CS75PlusSuccess,
-      OutingTotalPie,
-      OutingDay,
-      OutingApp,
-      OutingAcc,
-      OutingParking,
+      CS75AccNum,
+      CS75AccMile,
+      CS75AccDuration,
+      CS75Parking,
+      CS75ParkingFunction,
+      CS75PilotedParking,
+      ImagePage1,
+      ImagePage2,
+      ImagePage3,
+      ImagePage4,
+      ImagePage5,
+      ImagePage6,
+      ImagePage7,
+      ImagePage8,
+      ImagePage9,
+      ImagePage10,
+      // CS75PlusPreference,
+      // CS75PlusSuccess,
+      // OutingTotalPie,
+      // OutingDay,
+      // OutingApp,
+      // OutingAcc,
+      // OutingParking,
       // TotalLine,
       // TrendAnalyse,
-      // UserAnalyse,
-      // // CarVsSUV,
-      // MainCity,
+      UserAnalyse,
+      // CarVsSUV,
+      MainCity,
       // CarTypeOil,
       // RegionalFuel,
       // RegionalCityFuel,
@@ -464,6 +539,9 @@
         homeBg: {
           backgroundImage: "url(" + require("./img/home.png") + ")",
           backgroundSize: "100% 100%"
+        },
+        imgBg1: {
+          backgroundImage: "url(" + require("./img/远程控制成功率.png") + ")",
         },
         bg: {
           backgroundImage: "url(" + require("@/components/home/img/main.jpg") + ")",
@@ -543,14 +621,14 @@
           dateEnd: '',
         },
         userNumSeriesList: {
-          accUserNum: 215262,
-          newUserNum : 22169,
-          statisMonth: '09月',
+          accUserNum: 234416,
+          newUserNum : 23561,
+          statisMonth: '10月',
           totalUserNum: '',
-          totalItem: ['新CS75','CS75-PLUS','CS35','CS85-COUPE','逸动','CS95','CS55','CS75','睿骋CC','新CS15',],
-          totalData: [7473,7168,3444,2129,1258,442,122,94,32,2,],
-          qoq: 0.35,
-          yoy: 1.24
+          totalItem: ['CS75-PLUS','新CS75','CS35-PLUS','CS85-COUPE','逸动','CS95','睿骋CC','CS55','CS75'],
+          totalData: [9913,6958,3214,1860,1038,309,133,83,80,],
+          qoq: 8.7,
+          yoy: 102
         },
         trendAnalyseList: {
           monthList: [],
@@ -575,19 +653,21 @@
           mainUserAge: '--',
           mainUserAgeRate: '--',
           maxUserAge: '--',
-          ageRange: [],
-          userNum: [],
+          ageRange: ['1-20','20-30','30-40','40-50','50以上'],
+          userNum: [1974,76764,76273,44486,17767],
           maleRate: 4.1,
           femaleRate: 1,
           carNameOne: '',
           carNameTwo: '',
           carNameThree: '',
           carNameFour: '',
-          ageItem: [],
-          ageDataOne: [],
-          ageDataTwo: [],
-          ageDataThree: [],
-          ageDataFour: [],
+          ageItem: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月',],
+          ageDataOne: [56.1,55.98,54.93,53.97,53.42,53.37,53.41,53.4,53.5,53.69],
+          ageDataTwo: [61.57,60.19,57.22,56.37,55.24,54.11,53.44,53.28,53.23,53.38],
+          ageDataThree: [61.01,60.87,59.33,58.57,57.93,57.87,57.66,57.46,57.58,57.47],
+          ageDataFour: [,,,,,,,,57.8,58.97],
+          ageDataFive: [51.23,48.39,43.19,43.91,44.24,46.83,47.12,48.08,47.52,47.44],
+          ageDataSix: [74.35,73.59,72.65,72.22,71.89,71.2,71.44,71.67,71.99,72.33],
           sexRatio: 1,
           detailListSeriesName: ['逸动','全新CS35plus','CS55','新CS75'],
           ageRange1: [],
@@ -611,15 +691,15 @@
           mainCityDistribution: '--、--、--、--、--、--、--、--、--',
           mainUserAgeRate: '--',
           maxUserAge: '--、--',
-          allListCityType: [],
-          allListResidentNum: [],
-          detailListSeriesName: [],
-          firstCityNum: [],
-          secondCityNum: [],
-          thirdCityNum: [],
-          fourthCityNum: [],
-          fifthCityNum: [],
-          sixthCityNum: [],
+          allListCityType: ['一线','新一线','二线','三线','四线','五线'],
+          allListResidentNum: [9556,40105,33211,36568,32096,30236],
+          detailListSeriesName: ['逸动','CS35','CS55','新CS75','CS75-PLUS','CS95',],
+          firstCityNum: [5,3,8,5,3,14],
+          secondCityNum: [26,19,26,21,35,27],
+          thirdCityNum: [18,17,15,19,17,15],
+          fourthCityNum: [20,22,19,20,16,16],
+          fifthCityNum: [19,21,16,17,16,14],
+          sixthCityNum: [12,18,16,18,13,14],
         },
         seriesOilCost: {
           seriesAvgOilCostsItem: [],
@@ -852,7 +932,7 @@
         let timeGap = (me.swiperTimeEnd.getTime()-me.swiperTimeStart.getTime())/1000;
         let index = this.swiper.activeIndex + 1;
         me.swiperTimeStart = new Date();
-        _czc.push(["_trackEvent",'9月&国庆月报','浏览页面',index.toString(),timeGap.toString(),'']);
+        _czc.push(["_trackEvent",'10月月报','浏览页面',index.toString(),timeGap.toString(),'']);
       },
 
       changePage: function(index) {
@@ -877,6 +957,7 @@
 
       setInfo: function(response) {
         // let data = response.data.data;
+        let data = {};
         let me = this;
 
         //存入组件totalPie的数据
@@ -937,41 +1018,252 @@
           return;
         }
 
-        //存入组件CS75PlusPreference的数据
-        if(me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //存入组件userAnalyse中全部用户年龄分析的数据
+        if(me.$refs.userAnalyseDataRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.userAnalyseDataRef.$parent.$el.classList[1] === 'swiper-slide-active' ) {
+          // const ageRange = [];
+          // const userNum = [];
+          // for (var i = 0; i < data.userAnalysis.userAges.length; i++) {
+          //   ageRange.push(data.userAnalysis.userAges[i].ageRange);
+          //   userNum.push(data.userAnalysis.userAges[i].userNum);
+          // }
+          // me.userAnalyseData.ageRange = ageRange;
+          // me.userAnalyseData.userNum = userNum;
+          // // me.userAnalyseData.sexRatio = data.userAnalysis.sexRatio;
+          //
+          // const ageDataOne = [], ageDataTwo = [], ageDataThree = [], ageDataFour = [];
+          // let age = 0;
+          // me.userAnalyseData.carNameOne = '第二代逸动';
+          // me.userAnalyseData.carNameTwo = '全新CS35Plus';
+          // me.userAnalyseData.carNameThree = 'CS55';
+          // me.userAnalyseData.carNameFour = 'CS75';
+          // for(var i=14;i < 85;i++) {
+          //   me.userAnalyseData.ageItem.push(i);
+          //   if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'C211' && data.userAnalysis.seriesBuyUserAges[age].age === i){
+          //     ageDataOne.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
+          //     age++;
+          //   }else{
+          //     ageDataOne.push(0);
+          //   }
+          // }
+          //
+          // for(var i=14;i < 85;i++) {
+          //   if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S111' && data.userAnalysis.seriesBuyUserAges[age].age === i){
+          //     ageDataTwo.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
+          //     age++;
+          //   }else{
+          //     ageDataTwo.push(0);
+          //   }
+          // }
+          // for(var i=14;i < 85;i++) {
+          //   if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S201' && data.userAnalysis.seriesBuyUserAges[age].age === i){
+          //     ageDataThree.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
+          //     age++;
+          //   }else {
+          //     ageDataThree.push(0);
+          //   }
+          // }
+          // for(var i=14;i < 74;i++) {
+          //   if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S301-18' && data.userAnalysis.seriesBuyUserAges[age].age === i){
+          //     ageDataFour.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
+          //     age++;
+          //   }else {
+          //     ageDataFour.push(0);
+          //   }
+          // }
+          // me.userAnalyseData.ageDataOne = ageDataOne;
+          // me.userAnalyseData.ageDataTwo = ageDataTwo;
+          // me.userAnalyseData.ageDataThree = ageDataThree;
+          // me.userAnalyseData.ageDataFour = ageDataFour;
+          //
+          // let ageData = data.userAnalysis.seriesBuyUserAgeRanges;
+          // const ageRange1 = [], ageRange2 = [], ageRange3 = [], ageRange4 = [], ageRange5 = [],
+          //   ageRange6 = [],ageRange7 = [],ageRange8 = [], ageRange9 = [];
+          // for (var i = 0; i < ageData.length; i++) {
+          //   if(ageData[i].ageRange === "18-23"){
+          //     ageRange1.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "23-28"){
+          //     ageRange2.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "28-33"){
+          //     ageRange3.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "33-38"){
+          //     ageRange4.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "38-43"){
+          //     ageRange5.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "43-48"){
+          //     ageRange6.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "48-53"){
+          //     ageRange7.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "53-58"){
+          //     ageRange8.push(ageData[i].userCount);
+          //   }
+          //   if(ageData[i].ageRange === "58以上"){
+          //     ageRange9.push(ageData[i].userCount);
+          //   }
+          // }
+          // me.userAnalyseData.ageRange1 = ageRange1;
+          // me.userAnalyseData.ageRange2 = ageRange2;
+          // me.userAnalyseData.ageRange3 = ageRange3;
+          // me.userAnalyseData.ageRange4 = ageRange4;
+          // me.userAnalyseData.ageRange5 = ageRange5;
+          // me.userAnalyseData.ageRange6 = ageRange6;
+          // me.userAnalyseData.ageRange7 = ageRange7;
+          // me.userAnalyseData.ageRange8 = ageRange8;
+          // me.userAnalyseData.ageRange9 = ageRange9;
 
-          if(me.$refs.CS75PlusPreferenceRef){
-            me.$refs.CS75PlusPreferenceRef.init();
+          if(me.$refs.userAnalyseDataRef){
+            me.$refs.userAnalyseDataRef.initUserAnalyse();
+          }
+          me.userAnalyseFlag = 1;
+          return;
+        }
+
+        //存入组件mainCity的数据
+        if(me.$refs.cityDistributionPageRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.cityDistributionPageRef.$parent.$el.classList[1] === 'swiper-slide-active' ) {
+          // const allListCityType = [];
+          // const allListResidentNum = [];
+          // const detailListResidentNum = [];
+          // for (var i = 0; i < data.residentialCityPage.cityStatis.length; i++) {
+          //   allListCityType.push(data.residentialCityPage.cityStatis[i].cityType);
+          //   allListResidentNum.push(data.residentialCityPage.cityStatis[i].residentNum);
+          // }
+          // me.cityDistributionPage.allListCityType = allListCityType;
+          // me.cityDistributionPage.allListResidentNum = allListResidentNum;
+          // let cityData = data.residentialCityPage.seriesCityStatis;
+          // const detailListSeriesName = [];
+          // const firstCityNum = [], secondCityNum = [], thirdCityNum = [], fourthCityNum = [], fifthCityNum = [], sixthCityNum = [];
+          // for (var i = 0; i < cityData.length; i++) {
+          //   if(cityData[i].cityType === "一线"){
+          //     firstCityNum.push(cityData[i].residentNum);
+          //     detailListSeriesName.push(cityData[i].seriesName);
+          //   }
+          //   if(cityData[i].cityType === "二线"){
+          //     secondCityNum.push(cityData[i].residentNum);
+          //   }
+          //   if(cityData[i].cityType === "三线"){
+          //     thirdCityNum.push(cityData[i].residentNum);
+          //   }
+          //   if(cityData[i].cityType === "四线"){
+          //     fourthCityNum.push(cityData[i].residentNum);
+          //   }
+          //   if(cityData[i].cityType === "五线"){
+          //     fifthCityNum.push(cityData[i].residentNum);
+          //     // if(cityData[i].seriesName === "逸动"){
+          //     //   fifthCityNum.push(0);
+          //     // }
+          //   }
+          //   if(cityData[i].cityType === "新一线"){
+          //     sixthCityNum.push(cityData[i].residentNum);
+          //   }
+          // }
+          // me.cityDistributionPage.detailListSeriesName = detailListSeriesName;
+          // me.cityDistributionPage.firstCityNum = firstCityNum;
+          // me.cityDistributionPage.secondCityNum = secondCityNum;
+          // me.cityDistributionPage.thirdCityNum = thirdCityNum;
+          // me.cityDistributionPage.fourthCityNum = fourthCityNum;
+          // me.cityDistributionPage.fifthCityNum = fifthCityNum;
+          // me.cityDistributionPage.sixthCityNum = sixthCityNum;
+          if(me.$refs.cityDistributionPageRef){
+            me.$refs.cityDistributionPageRef.initMainCity();
           }
           return;
         }
 
-        //存入组件CS75PlusSuccess的数据
-        if(me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //存入组件CS75AccNum的数据
+        if(me.$refs.CS75AccNumRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75AccNumRef.$parent.$el.classList[1] === 'swiper-slide-active'){
 
-          if(me.$refs.CS75PlusSuccessRef){
-            me.$refs.CS75PlusSuccessRef.init();
+          if(me.$refs.CS75AccNumRef){
+            me.$refs.CS75AccNumRef.init();
           }
           return;
         }
 
-        //存入组件OutingTotalPie的数据
-        if(me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //存入组件CS75AccMile的数据
+        if(me.$refs.CS75AccMileRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75AccMileRef.$parent.$el.classList[1] === 'swiper-slide-active'){
 
-          if(me.$refs.OutingTotalPieRef){
-            me.$refs.OutingTotalPieRef.init();
+          if(me.$refs.CS75AccMileRef){
+            me.$refs.CS75AccMileRef.init();
           }
           return;
         }
 
-        //存入组件OutingDay的数据
-        if(me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //存入组件CS75AccDuration的数据
+        if(me.$refs.CS75AccDurationRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75AccDurationRef.$parent.$el.classList[1] === 'swiper-slide-active'){
 
-          if(me.$refs.OutingDayRef){
-            me.$refs.OutingDayRef.init();
+          if(me.$refs.CS75AccDurationRef){
+            me.$refs.CS75AccDurationRef.init();
           }
           return;
         }
+
+        //存入组件CS75Parking的数据
+        if(me.$refs.CS75ParkingRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75ParkingRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.CS75ParkingRef){
+            me.$refs.CS75ParkingRef.init();
+          }
+          return;
+        }
+
+        //存入组件CS75ParkingFunction的数据
+        if(me.$refs.CS75ParkingFunctionRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75ParkingFunctionRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.CS75ParkingFunctionRef){
+            me.$refs.CS75ParkingFunctionRef.init();
+          }
+          return;
+        }
+
+        //存入组件CS75PilotedParking的数据
+        if(me.$refs.CS75PilotedParkingRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PilotedParkingRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+
+          if(me.$refs.CS75PilotedParkingRef){
+            me.$refs.CS75PilotedParkingRef.init();
+          }
+          return;
+        }
+
+        // //存入组件CS75PlusPreference的数据
+        // if(me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusPreferenceRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.CS75PlusPreferenceRef){
+        //     me.$refs.CS75PlusPreferenceRef.init();
+        //   }
+        //   return;
+        // }
+        //
+        // //存入组件CS75PlusSuccess的数据
+        // if(me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.CS75PlusSuccessRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.CS75PlusSuccessRef){
+        //     me.$refs.CS75PlusSuccessRef.init();
+        //   }
+        //   return;
+        // }
+        //
+        // //存入组件OutingTotalPie的数据
+        // if(me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingTotalPieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.OutingTotalPieRef){
+        //     me.$refs.OutingTotalPieRef.init();
+        //   }
+        //   return;
+        // }
+        //
+        // //存入组件OutingDay的数据
+        // if(me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingDayRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.OutingDayRef){
+        //     me.$refs.OutingDayRef.init();
+        //   }
+        //   return;
+        // }
 
         // //存入组件OutingApp的数据
         // if(me.$refs.OutingAppRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingAppRef.$parent.$el.classList[1] === 'swiper-slide-active'){
@@ -982,23 +1274,23 @@
         //   return;
         // }
 
-        //存入组件OutingAcc的数据
-        if(me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-active'){
-
-          if(me.$refs.OutingAccRef){
-            me.$refs.OutingAccRef.init();
-          }
-          return;
-        }
-
-        //存入组件OutingParking的数据
-        if(me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-active'){
-
-          if(me.$refs.OutingParkingRef){
-            me.$refs.OutingParkingRef.init();
-          }
-          return;
-        }
+        // //存入组件OutingAcc的数据
+        // if(me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingAccRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.OutingAccRef){
+        //     me.$refs.OutingAccRef.init();
+        //   }
+        //   return;
+        // }
+        //
+        // //存入组件OutingParking的数据
+        // if(me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.OutingParkingRef.$parent.$el.classList[1] === 'swiper-slide-active'){
+        //
+        //   if(me.$refs.OutingParkingRef){
+        //     me.$refs.OutingParkingRef.init();
+        //   }
+        //   return;
+        // }
 
         // //存入组件doublePie的数据
         // if(me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.doublePieRef.$parent.$el.classList[1] === 'swiper-slide-active'){
@@ -1029,114 +1321,6 @@
         //   if(me.$refs.seriesOnlineListRef){
         //     me.$refs.seriesOnlineListRef.initTotalLine();
         //   }
-        //   return;
-        // }
-
-
-
-        // //存入组件userAnalyse中全部用户年龄分析的数据
-        // if(!me.userAnalyseFlag) {
-        //   const ageRange = [];
-        //   const userNum = [];
-        //   for (var i = 0; i < data.userAnalysis.userAges.length; i++) {
-        //     ageRange.push(data.userAnalysis.userAges[i].ageRange);
-        //     userNum.push(data.userAnalysis.userAges[i].userNum);
-        //   }
-        //   me.userAnalyseData.ageRange = ageRange;
-        //   me.userAnalyseData.userNum = userNum;
-        //   // me.userAnalyseData.sexRatio = data.userAnalysis.sexRatio;
-        //
-        //   const ageDataOne = [], ageDataTwo = [], ageDataThree = [], ageDataFour = [];
-        //   let age = 0;
-        //   me.userAnalyseData.carNameOne = '第二代逸动';
-        //   me.userAnalyseData.carNameTwo = '全新CS35Plus';
-        //   me.userAnalyseData.carNameThree = 'CS55';
-        //   me.userAnalyseData.carNameFour = 'CS75';
-        //   for(var i=14;i < 85;i++) {
-        //     me.userAnalyseData.ageItem.push(i);
-        //     if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'C211' && data.userAnalysis.seriesBuyUserAges[age].age === i){
-        //       ageDataOne.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
-        //       age++;
-        //     }else{
-        //       ageDataOne.push(0);
-        //     }
-        //   }
-        //
-        //   for(var i=14;i < 85;i++) {
-        //     if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S111' && data.userAnalysis.seriesBuyUserAges[age].age === i){
-        //       ageDataTwo.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
-        //       age++;
-        //     }else{
-        //       ageDataTwo.push(0);
-        //     }
-        //   }
-        //   for(var i=14;i < 85;i++) {
-        //     if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S201' && data.userAnalysis.seriesBuyUserAges[age].age === i){
-        //       ageDataThree.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
-        //       age++;
-        //     }else {
-        //       ageDataThree.push(0);
-        //     }
-        //   }
-        //   for(var i=14;i < 74;i++) {
-        //     if(data.userAnalysis.seriesBuyUserAges[age].seriesCode === 'S301-18' && data.userAnalysis.seriesBuyUserAges[age].age === i){
-        //       ageDataFour.push(data.userAnalysis.seriesBuyUserAges[age].userCount);
-        //       age++;
-        //     }else {
-        //       ageDataFour.push(0);
-        //     }
-        //   }
-        //   me.userAnalyseData.ageDataOne = ageDataOne;
-        //   me.userAnalyseData.ageDataTwo = ageDataTwo;
-        //   me.userAnalyseData.ageDataThree = ageDataThree;
-        //   me.userAnalyseData.ageDataFour = ageDataFour;
-        //
-        //   let ageData = data.userAnalysis.seriesBuyUserAgeRanges;
-        //   const ageRange1 = [], ageRange2 = [], ageRange3 = [], ageRange4 = [], ageRange5 = [],
-        //     ageRange6 = [],ageRange7 = [],ageRange8 = [], ageRange9 = [];
-        //   for (var i = 0; i < ageData.length; i++) {
-        //     if(ageData[i].ageRange === "18-23"){
-        //       ageRange1.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "23-28"){
-        //       ageRange2.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "28-33"){
-        //       ageRange3.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "33-38"){
-        //       ageRange4.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "38-43"){
-        //       ageRange5.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "43-48"){
-        //       ageRange6.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "48-53"){
-        //       ageRange7.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "53-58"){
-        //       ageRange8.push(ageData[i].userCount);
-        //     }
-        //     if(ageData[i].ageRange === "58以上"){
-        //       ageRange9.push(ageData[i].userCount);
-        //     }
-        //   }
-        //   me.userAnalyseData.ageRange1 = ageRange1;
-        //   me.userAnalyseData.ageRange2 = ageRange2;
-        //   me.userAnalyseData.ageRange3 = ageRange3;
-        //   me.userAnalyseData.ageRange4 = ageRange4;
-        //   me.userAnalyseData.ageRange5 = ageRange5;
-        //   me.userAnalyseData.ageRange6 = ageRange6;
-        //   me.userAnalyseData.ageRange7 = ageRange7;
-        //   me.userAnalyseData.ageRange8 = ageRange8;
-        //   me.userAnalyseData.ageRange9 = ageRange9;
-        //
-        //   if(me.$refs.userAnalyseDataRef){
-        //     me.$refs.userAnalyseDataRef.initUserAnalyse();
-        //   }
-        //   me.userAnalyseFlag = 1;
         //   return;
         // }
 
@@ -1171,57 +1355,6 @@
         //   }
         //   me.seriesGenderRatio.carRateListOne = carRateListOne;
         //   me.seriesGenderRatio.carRateListTwo = carRateListTwo;
-        //   return;
-        // }
-
-        // //存入组件mainCity的数据
-        // if(me.$refs.cityDistributionPageRef.$parent.$el.classList[1] === 'swiper-slide-next' || me.$refs.cityDistributionPageRef.$parent.$el.classList[1] === 'swiper-slide-active' ) {
-        //   const allListCityType = [];
-        //   const allListResidentNum = [];
-        //   const detailListResidentNum = [];
-        //   for (var i = 0; i < data.residentialCityPage.cityStatis.length; i++) {
-        //     allListCityType.push(data.residentialCityPage.cityStatis[i].cityType);
-        //     allListResidentNum.push(data.residentialCityPage.cityStatis[i].residentNum);
-        //   }
-        //   me.cityDistributionPage.allListCityType = allListCityType;
-        //   me.cityDistributionPage.allListResidentNum = allListResidentNum;
-        //   let cityData = data.residentialCityPage.seriesCityStatis;
-        //   const detailListSeriesName = [];
-        //   const firstCityNum = [], secondCityNum = [], thirdCityNum = [], fourthCityNum = [], fifthCityNum = [], sixthCityNum = [];
-        //   for (var i = 0; i < cityData.length; i++) {
-        //     if(cityData[i].cityType === "一线"){
-        //       firstCityNum.push(cityData[i].residentNum);
-        //       detailListSeriesName.push(cityData[i].seriesName);
-        //     }
-        //     if(cityData[i].cityType === "二线"){
-        //       secondCityNum.push(cityData[i].residentNum);
-        //     }
-        //     if(cityData[i].cityType === "三线"){
-        //       thirdCityNum.push(cityData[i].residentNum);
-        //     }
-        //     if(cityData[i].cityType === "四线"){
-        //       fourthCityNum.push(cityData[i].residentNum);
-        //     }
-        //     if(cityData[i].cityType === "五线"){
-        //       fifthCityNum.push(cityData[i].residentNum);
-        //       // if(cityData[i].seriesName === "逸动"){
-        //       //   fifthCityNum.push(0);
-        //       // }
-        //     }
-        //     if(cityData[i].cityType === "新一线"){
-        //       sixthCityNum.push(cityData[i].residentNum);
-        //     }
-        //   }
-        //   me.cityDistributionPage.detailListSeriesName = detailListSeriesName;
-        //   me.cityDistributionPage.firstCityNum = firstCityNum;
-        //   me.cityDistributionPage.secondCityNum = secondCityNum;
-        //   me.cityDistributionPage.thirdCityNum = thirdCityNum;
-        //   me.cityDistributionPage.fourthCityNum = fourthCityNum;
-        //   me.cityDistributionPage.fifthCityNum = fifthCityNum;
-        //   me.cityDistributionPage.sixthCityNum = sixthCityNum;
-        //   if(me.$refs.cityDistributionPageRef){
-        //     me.$refs.cityDistributionPageRef.initMainCity();
-        //   }
         //   return;
         // }
 
@@ -1693,16 +1826,17 @@
     height:2.4rem;
     margin: 0 auto;
     padding-left: 1.8rem;
+    padding-top: 0.7rem;
     text-align: left;
-    line-height: 2.4rem;
+    /*line-height: 2.4rem;*/
     color: #00A0E9;
     font-size: 0.43rem;
-    font-weight: bold;
+    /*font-weight: bold;*/
   }
 
   .menuItem1 {
-    height:4.5rem;
-    line-height: normal;
+    height:2.8rem;
+    /*line-height: normal;*/
   }
   .menuItem1 p {
     padding-top: 0.9rem;
@@ -1716,6 +1850,15 @@
     font-size: 0.38rem;
     font-weight: normal;
     line-height: 1.8;
+  }
+
+  .imgBg {
+    background-repeat: no-repeat;
+    background-size: 100%,100%;
+    width: 100%;
+    max-width: 100%;
+    background-color: #004595;
+    overflow: hidden
   }
 
   .newContent {

@@ -2,6 +2,7 @@
   <div>
     <!--<Drawer></Drawer>-->
     <div class="subTitle">用户年龄</div>
+    <div class="subTitle2">用户购车年龄分布</div>
     <div id="userPie" :style="{width: '90%', height: pieHeight+'px',margin:'0 auto'}"></div>
     <!--<div class="linear-progress">-->
       <!--<p>男：女</p>-->
@@ -15,15 +16,14 @@
         <!--<div class="itemText2">1</div>-->
       <!--</div>-->
     <!--</div>-->
-    <div class="subTitle2">各车型年龄</div>
-<!--    <div id="userLine" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>-->
-    <div id="userBar" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>
+    <div class="subTitle2">年轻购车用户的占比趋势</div>
+    <div class="desc">年轻购车用户指在20-35岁购车的用户</div>
+    <div id="userLine" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>
+<!--    <div id="userBar" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>-->
     <div id="mainAge">
-      <p>
-        用户年龄特征趋于<span> 稳定 </span>
-      </p>
+        整体来看，<span> 20-35岁 </span>购车用户占比<br/>较年初有所<span> 降低</span>。
     </div>
-    <div class="page">2-1/3</div>
+    <div class="page">3/20</div>
   </div>
 </template>
 
@@ -36,8 +36,9 @@
     props: ["userAnalyseData"],
     data() {
       return {
-        pieHeight: window.innerHeight * 0.25,
-        lineHeight: window.innerHeight * 0.3,
+        pieHeight: window.innerHeight * 0.24,
+        lineHeight: window.innerHeight * 0.26,
+        legend: ['CS35','CS55','新CS75','CS75-PLUS','CS95','逸动'],
         ratio: 1,
       }
     },
@@ -57,8 +58,8 @@
           totalJson.push(json);
         }
         me.drawPie(totalJson);
-        // me.drawLine();
-        me.drawBar();
+        me.drawLine();
+        // me.drawBar();
       },
       drawPie(totalJson){
         let me = this;
@@ -160,44 +161,72 @@
         let userAnalysisLine = me.$echarts.init(document.getElementById('userLine'))
         // 绘制图表
         userAnalysisLine.setOption({
+          color: [
+            '#00A0E9',
+            '#EEAF00',
+            '#EB595F',
+            '#9FB934',
+            '#B15BFF',
+            '#ffb980',
+            '#FF5809',
+            '#2ec7c9',
+          ],
+          // tooltip: {
+          //   trigger: 'axis',
+          //   formatter: '{b}岁<br/>{a0}:{c0}<br/>{a1}:{c1}<br/>{a2}:{c2}<br/>{a3}:{c3}'
+          // },
           tooltip: {
+            show: true,
             trigger: 'axis',
-            formatter: '{b}岁<br/>{a0}:{c0}<br/>{a1}:{c1}<br/>{a2}:{c2}<br/>{a3}:{c3}'
-          },
-          lineStyle:{
-            normal:{
-              color:'#32A8FF'
-            }
+            // formatter: '{b}<br/>{a0}:{c0}%<br/>{a1}:{c1}%<br/>{a2}:{c2}%<br/>',
+            position: function (pos, params, dom, rect, size) {
+              // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+              var obj = {top: 60};
+              obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = '10%';
+              return obj;
+            },
+            textStyle:{
+              align:'left',
+            },
           },
           legend: {
-            data:['逸动','全新CS35Plus','CS55','新CS75'],
+            data: me.legend,
             itemHeight: 6,
             textStyle: {
               color: 'grey'
             },
-            orient: 'vertical',
-            right: '5%',
-            top: 0,
+            // orient: 'vertical',
+            // top: '10%',
+            left: '10%',
+            right: '10%'
           },
           grid: {
-            left: '3%',
-            right: '6%',
-            bottom: '9%',
-            top: '15%',
-            containLabel: true
+            left: '16%',
+            right: '9%',
+            top: '25%',
+            bottom: '18%',
+            // containLabel: true
           },
           xAxis: {
             type: 'category',
             boundaryGap:false,
             data:me.userAnalyseData.ageItem,
+            splitLine:{
+              show: true,
+              lineStyle: {
+                color: ['#CCECFB'],
+                opacity: 0.7,
+              }
+            },
             axisLine: {
               lineStyle: {
                 color: '#00A0E9',
                 opacity: 0.7,
-              }
+              },
             },
             axisLabel :{
-              color: '#666'
+              color: '#666',
+              interval: 0,
             },
             nameTextStyle: {
               color: '#BEBEBE'
@@ -209,13 +238,12 @@
               show: true,
               lineStyle: {
                 color: ['#CCECFB'],
-                opacity: 0.1,
+                opacity: 0.7,
               }
             },
             axisLine: {
               lineStyle: {
                 color: '#00A0E9',
-                opacity: 0.7,
               }
             },
             axisLabel :{
@@ -225,66 +253,40 @@
             nameTextStyle: {
               color: '#BEBEBE',
             },
-            /*min:0,
-             max:60,
-             splitNumber:6*/
+            min: 40,
+            // max:60,
+            // splitNumber:6
           },
           series: [
             {
-              name:'逸动',
+              name:me.legend[0],
               type:'line',
-              symbol: 'circle',
-              lineStyle: {
-                color: '#888889',
-                opacity: 0.8,
-              },
-              itemStyle: {
-                opacity: 0,
-                color: '#888889'
-              },
               data:me.userAnalyseData.ageDataOne,
             },
             {
-              name:'全新CS35Plus',
+              name:me.legend[1],
               type:'line',
-              symbol: 'circle',
-              lineStyle: {
-                color: '#EB595F',
-                opacity: 0.8,
-              },
-              itemStyle: {
-                opacity: 0,
-                color: '#EB595F'
-              },
               data:me.userAnalyseData.ageDataTwo,
             },
             {
-              name:'CS55',
+              name:me.legend[2],
               type:'line',
-              symbol: 'circle',
-              lineStyle: {
-                color: '#9FB934',
-                opacity: 0.8,
-              },
-              itemStyle: {
-                opacity: 0,
-                color: '#9FB934'
-              },
               data:me.userAnalyseData.ageDataThree,
             },
             {
-              name:'新CS75',
+              name:me.legend[3],
               type:'line',
-              symbol: 'circle',
-              lineStyle: {
-                color: '#00A0E9',
-                opacity: 0.8,
-              },
-              itemStyle: {
-                opacity: 0,
-                color: '#00A0E9'
-              },
               data:me.userAnalyseData.ageDataFour,
+            },
+            {
+              name:me.legend[4],
+              type:'line',
+              data:me.userAnalyseData.ageDataFive,
+            },
+            {
+              name:me.legend[5],
+              type:'line',
+              data:me.userAnalyseData.ageDataSix,
             }
           ]
         });
@@ -456,7 +458,8 @@
   .subTitle {
     width: 100%;
     margin: 0 auto;
-    font-size: 0.63rem;
+    /*font-size: 0.63rem;*/
+    font-size: 0.587rem;
     color: #444444;
     font-weight: bold;
     padding-top: 9%;
@@ -471,6 +474,13 @@
     font-size: 0.48rem;
     color: #444;
     font-weight: bold
+  }
+
+  .desc {
+    color: #444;
+    text-align: left;
+    margin-left: 8%;
+    margin-top: 1%;
   }
 
   .linear-progress {

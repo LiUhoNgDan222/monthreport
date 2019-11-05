@@ -4,7 +4,7 @@ import moment from 'moment'
 
 var reg = /([^$]+)$/;
 var month = window.location.href.match(reg);
-var month12 = ['2019-09'];
+var month12 = ['2019-10'];
 var month1 = moment().subtract(1, 'months').format('YYYY-MM');
 
 var Home = r => require.ensure([], () => r(require('@/components/home/Home')), 'Home', 'Home')

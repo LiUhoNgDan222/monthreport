@@ -25,8 +25,8 @@
     name: "CS75PlusPreference",
     data() {
       return {
-        barHeight1: window.innerHeight * 0.25,
-        barHeight2: window.innerHeight * 0.24,
+        barHeight1: window.innerHeight * 0.23,
+        barHeight2: window.innerHeight * 0.23,
         color: ['#00A0E9','#EEAF00','#EB595F','#9FB934','#B15BFF'],
         legend: ['总请求数','功能请求数','搭载车辆数'],
         xAxisData: ['总请求数','锁定车门','查询车况','解锁车门','打开空调','关闭空调','鸣笛','闪灯','闪灯鸣笛','车窗开缝',
@@ -420,7 +420,7 @@
   #subTitle {
     font-size: 0.4rem;
     color: #00a0e9;
-    margin: 0 7% 4%;
+    margin: 0 7% 10px;
     text-align: left;
   }
 

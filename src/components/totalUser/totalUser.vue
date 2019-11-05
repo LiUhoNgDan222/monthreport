@@ -10,9 +10,10 @@
     <div class="subtitle2">主要车型实名认证率趋势分析</div>
     <div id="userTrend" :style="{width: '100%', height: barHeight2+'px', margin: '10px 0 0 0'}"></div>
     <div class="boxStyle">
-      除了CS75-PLUS新车上市外，其余主要车型都从<span> 2019年7月 </span>开始呈<span> 下降 </span>趋势。
+      因为一级经销商的<span> 实名认证考核策略</span>，<br/>
+      CS75-PLUS实名认证率接近100%，<br/>可以考虑<span> 扩展 </span>到其他渠道。
     </div>
-    <div class="page">2/27</div>
+    <div class="page">2/20</div>
   </div>
 </template>
 
@@ -25,27 +26,27 @@
     data() {
       return {
         barHeight1: window.innerHeight * 0.22,
-        barHeight2: window.innerHeight * 0.33,
+        barHeight2: window.innerHeight * 0.3,
         funnelData: [
           {value:80, name:'期间产量'},
-          {value:60, name:'联网搭载 36.1%'},
-          {value:40, name:'终端实销 74.1%'},
-          {value:20, name:'车辆激活 83.9%'},
+          {value:60, name:'联网搭载 38.2%'},
+          {value:40, name:'终端实销 73.0%'},
+          {value:20, name:'车辆激活 85.4%'},
         ],
         funnelData1: [
-          {value:80, name:'465017'},
-          {value:60, name:'168109'},
-          {value:40, name:'124617'},
-          {value:20, name:'104549'},
+          {value:80, name:'524902'},
+          {value:60, name:'200376'},
+          {value:40, name:'146189'},
+          {value:20, name:'124910'},
         ],
         legend: ['CS35','CS55','新CS75','CS75-PLUS','CS95','逸动',],
-        monthList: ['2019-01','2019-02','2019-03','2019-04','2019-05','2019-06','2019-07','2019-08','2019-09'],
-        lineData: [97.7,97.8,97,97.7,97.8,97.2,97.1,92,87.3],
-        lineData1: [96.1,90.3,100,93.4,92.8,94.5,97.6,85,88.1],
-        lineData2: [97.1,97.6,97,96.7,96.8,95.7,95.7,91.2,83.2],
-        lineData3: [,,,,,84.6,94.4,96.3,95.1],
-        lineData4: [85.3,73.1,80,93.3,92.5,92.0,91.5,90.7,83.2],
-        lineData5: [95.3,97.1,95.1,97.2,95.6,94.2,97.3,90.8,83.4],
+        monthList: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月',],
+        lineData: [86.57,88.92,92.72,92.72,92.74,92.1,93.13,94.19,93.82,95.83],
+        lineData1: [88.89,88.98,90.14,90.02,89.96,90.45,92,92.97,93.16,93.7],
+        lineData2: [92.47,93.39,94.35,94.86,94.37,93.49,95.39,95.67,95.57,96.1],
+        lineData3: [,,,,,,,,87.57,98.25],
+        lineData4: [83.08,83.09,83.93,83.37,82.39,82.72,85.2,87.76,88.1,89.16],
+        lineData5: [91.25,91.9,92.88,93.25,93.2,92.67,93.5,94.69,94.75,95.47],
       }
     },
     mounted(){
@@ -123,7 +124,7 @@
             left: '16%',
             right: '9%',
             top: '24%',
-            bottom: '25%'
+            bottom: '16%'
           },
           tooltip: {
             show: true,
@@ -170,7 +171,7 @@
               fontSize: 12,
               color: '#666',
               interval: 0,
-              rotate: 30
+              // rotate: 30
             },
             nameTextStyle: {
               color: '#666'
@@ -179,7 +180,7 @@
           yAxis: {
             // name: '比例',
             type: 'value',
-            min: 70,
+            min: 80,
             splitLine:{
               show: true,
               lineStyle: {
@@ -240,7 +241,7 @@
             },
           },{
             name: me.legend[4],
-            data: me.lineData5,
+            data: me.lineData4,
             type: 'line',
             barWidth: 7,
             itemStyle: {
@@ -268,7 +269,8 @@
   #title {
     width: 100%;
     margin: 0 auto;
-    font-size: 0.63rem;
+    /*font-size: 0.63rem;*/
+    font-size: 0.587rem;
     color: #444444;
     font-weight: bold;
     padding-top: 9%;

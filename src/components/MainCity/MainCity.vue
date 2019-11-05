@@ -5,12 +5,12 @@
     <div id="cityPie" :style="{width: '80%', height: pieHeight+'px', margin: '0 0 0 10%'}"></div>
     <div id="cityBar" :style="{width: '100%', height: barHeight+'px', margin: '0 0 5% 0 '}"></div>
     <div class="mainCity">
-      较1月数据，<span>CS95 </span>在 <span>新一线 </span>城市占比从10%提高到43%，说明新一线城市用户逐渐成为大型SUV的主力用户。
+      <span>CS95 </span>在<span> 一线城市 </span>占比最大，<br/>符合高端旗舰车型的产品定位。
     </div>
     <p id="newCity">
       {{city}}
     </p>
-    <div class="page">2-2/3</div>
+    <div class="page">4/20</div>
   </div>
 </template>
 
@@ -205,8 +205,16 @@
         let mainCityBar = me.$echarts.init(document.getElementById('cityBar'))
         // 绘制图表
         mainCityBar.setOption({
+          color: [
+            '#888889',
+            '#EB595F',
+            '#9FB934',
+            '#00A0E9',
+            '#EEAF00',
+            '#004595',
+          ],
           grid: {
-            left: '30%',
+            left: '25%',
             right: '10%',
             bottom: '20',
             top: '20',
@@ -265,49 +273,35 @@
             type: 'bar',
             barWidth: 6,
             stack: '总量',
-            itemStyle: {
-              color: '#888889',
-            },
           },{
             data: me.cityDistributionPage.sixthCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
-            itemStyle: {
-              color: '#EB595F',
-            },
           },{
             data: me.cityDistributionPage.secondCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
-            itemStyle: {
-              color: '#9FB934',
-            },
           },{
             data: me.cityDistributionPage.thirdCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
-            itemStyle: {
-              color: '#00A0E9',
-            },
           },{
             data: me.cityDistributionPage.fourthCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
-            itemStyle: {
-              color: '#EEAF00',
-            },
           },{
             data: me.cityDistributionPage.fifthCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
             itemStyle: {
-              color: '#004595',
-              barBorderRadius: [0, 5, 5, 0],
+              normal: {
+                barBorderRadius: [0, 5, 5, 0],
+              }
             },
           }]
         });
