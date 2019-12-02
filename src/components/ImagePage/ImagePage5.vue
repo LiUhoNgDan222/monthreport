@@ -31,7 +31,9 @@
     color: #444444;
     font-weight: bold;
     padding-top: 9%;
-    padding-bottom: 6%
+    padding-bottom: 6%;
+    font-family: "Microsoft YaHei";
+
   }
   #subTitle1 {
     font-size: 0.36rem;

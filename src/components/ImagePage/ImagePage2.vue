@@ -31,7 +31,8 @@
     color: #444444;
     font-weight: bold;
     padding-top: 9%;
-    padding-bottom: 6%
+    padding-bottom: 6%;
+    font-family: "Microsoft YaHei";
   }
   #subTitle1 {
     font-size: 0.36rem;
@@ -50,10 +51,11 @@
     color: #444
   }
   .phonePic {
-    width: 9rem;
+    width: 86%;
+    /*width: 9rem;*/
     /*width: 7.7rem;*/
     /*height: 9rem;*/
-    margin-top: 3%;
+    margin-top: 2%;
     margin-bottom: 3%;
   }
 
