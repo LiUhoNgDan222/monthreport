@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">自动泊车(功能搭载754辆车)</div>
+    <div id="subTitle1">自动泊车(功能搭载2375辆车)</div>
     <div class="subTitle2">性能指标分析</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -33,11 +33,11 @@
       return {
         barHeight1: window.innerHeight * 0.28,
         color: ['#00A0E9','#EEAF00','#EB595F','#9FB934','#B15BFF'],
-        lineData: [16.47, 6.92,8.93],
-        lineData1: [44.71, 50.77,58.76],
-        lineData2: [38.82, 42.31,32.3],
+        lineData: [16.47, 8.91,9.78,5.15],
+        lineData1: [44.71, 49.22,59.48,33.08],
+        lineData2: [38.82, 41.86,30.73,61.77],
         legend: ['故障退出率','场景不满足及人为干预退出率','泊车成功率'],
-        xAxisData: ['8月','9月','10月'],
+        xAxisData: ['8月','9月','10月','11月'],
       }
     },
     mounted(){
@@ -127,7 +127,16 @@
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%'
+                // formatter: '{c}%',
+                formatter: function(params) {
+                  let str;
+                  if(params.value < 16 && params.value > 9){
+                    str = '           ' + params.value + '%';
+                  }else{
+                    str = params.value + '%';
+                  }
+                  return str;
+                },
               }
             },
             data: this.lineData,
@@ -141,7 +150,7 @@
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%'
+                formatter: '{c}%',
               }
             },
             data: this.lineData1,
@@ -155,7 +164,18 @@
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%'
+                // formatter: '{c}%',
+                formatter: function(params) {
+                  let str;
+                  if(params.value < 62 && params.value > 61){
+                    str = '      ' + params.value + '%';
+                  }else if(params.value < 31 && params.value > 30){
+                    str = params.value + '%      ';
+                  }else{
+                    str = params.value + '%';
+                  }
+                  return str;
+                },
               }
             },
             data: this.lineData2,

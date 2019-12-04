@@ -52,7 +52,7 @@
     color: #444
   }
   .phonePic {
-    width: 9rem;
+    width: 90%;
     /*width: 7.7rem;*/
     /*height: 9rem;*/
     margin-top: 3%;

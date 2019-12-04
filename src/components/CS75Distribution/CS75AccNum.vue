@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">ACC自适应巡航(功能搭载4831辆车)</div>
+    <div id="subTitle1">ACC自适应巡航(功能搭载16481辆车)</div>
     <div class="subTitle2">月使用车辆数</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -30,12 +30,12 @@
         barHeight1: window.innerHeight * 0.20,
         barHeight2: window.innerHeight * 0.28,
         color: ['#00A0E9','#EEAF00','#EB595F','#9FB934','#B15BFF'],
-        lineData: [904, 2044,1852,2003,],
+        lineData: [901, 2038,1848,2034,1674],
         legend: ['单车平均月使用次数','单车平均月驾驶次数','占比'],
-        xAxisData: ['7月','8月','9月','10月'],
-        barNum: [2.16, 11.8,8.64,10.18,],
-        barNum1: [305, 368,374,377.7,],
-        lineNum: [0.71, 3.21,2.31,2.7,],
+        xAxisData: ['7月','8月','9月','10月','11月'],
+        barNum: [11.52, 27.87,22.55,25.26,20,],
+        barNum1: [1636, 873,978,1002,1101,],
+        lineNum: [0.7, 3.19,2.31,2.52,1.82,],
       }
     },
     mounted(){
@@ -254,7 +254,7 @@
             label: {
               normal: {
                 show: true,
-                position: 'left',
+                position: 'top',
                 textStyle: {
                   fontSize: 10,
                 },

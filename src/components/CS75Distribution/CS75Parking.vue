@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">自动泊车(功能搭载754辆车)</div>
+    <div id="subTitle1">自动泊车(功能搭载2375辆车)</div>
     <div class="subTitle2">月使用车辆数</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -30,12 +30,12 @@
         barHeight1: window.innerHeight * 0.20,
         barHeight2: window.innerHeight * 0.28,
         color: ['#00A0E9','#EEAF00','#EB595F','#9FB934','#B15BFF'],
-        lineData: [212,126,128],
+        lineData: [212,195,201,170],
         legend: ['单车平均月使用次数','单车平均月驾驶次数','占比'],
-        xAxisData: ['8月','9月','10月'],
-        barNum: [0.99, 0.34,0.36,],
-        barNum1: [ 55.56,50.98,54.62],
-        lineNum: [1.78, 0.68,0.67,],
+        xAxisData: ['8月','9月','10月','11月'],
+        barNum: [3.52, 2.65,2.49,5.37],
+        barNum1: [ 219.3,256.9,279.7,307.5,],
+        lineNum: [1.6, 1.03,0.89,1.75],
       }
     },
     mounted(){
@@ -208,11 +208,11 @@
             // name: '车辆数',
             type: 'value',
             splitLine:{
-              show: true,
-              lineStyle: {
-                color: ['#CCECFB'],
-                opacity: 0.7,
-              }
+              show: false,
+              // lineStyle: {
+              //   color: ['#CCECFB'],
+              //   opacity: 0.7,
+              // }
             },
             axisLine: {
               lineStyle: {
@@ -262,7 +262,7 @@
             label: {
               normal: {
                 show: true,
-                position: 'bottom',
+                position: 'top',
                 textStyle: {
                   fontSize: 10,
                 },

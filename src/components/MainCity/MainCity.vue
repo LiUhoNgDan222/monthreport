@@ -3,14 +3,16 @@
     <!--<Drawer></Drawer>-->
     <div id="title">居住城市分布</div>
     <div id="cityPie" :style="{width: '80%', height: pieHeight+'px', margin: '0 0 0 10%'}"></div>
-    <div id="cityBar" :style="{width: '100%', height: barHeight+'px', margin: '0 0 5% 0 '}"></div>
+    <div class="subTitle2">二线及以上用户的占比趋势</div>
+    <div class="desc">指居住城市在一线、新一线、二线的用户</div>
+    <div id="cityBar" :style="{width: '100%', height: barHeight+'px', margin: '0'}"></div>
     <div class="mainCity">
       <span>CS95 </span>在<span> 一线城市 </span>占比最大，<br/>符合高端旗舰车型的产品定位。
     </div>
     <p id="newCity">
       {{city}}
     </p>
-    <div class="page">4/20</div>
+    <div class="page">4/19</div>
   </div>
 </template>
 
@@ -32,6 +34,13 @@
         fourth: '三线城市：汕头、保定、镇江、洛阳、乌鲁木齐、唐山、呼和浩特、芜湖、桂林、三亚等',
         fifth: '四线城市：茂名、驻马店、大理、宜春、曲靖、齐齐哈尔、德阳、乐山、十堰、渭南等',
         sixth: '五线城市：防城港、玉溪、普洱、抚顺、衡水、内江、达州、昭通、张家界、荆门等',
+        xAxisData: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月'],
+        lineData: [34.65,33.86,33.91,33.9,33.95,34.76,34.76,35.36,36.38,37.06,37.44],
+        lineData1: [33.28,32.93,30.78,32.89,32.86,33.28,33.74,33.87,34.05,34.06,34.12],
+        lineData2: [44.98,44.26,44.14,44.08,43.94,43.93,43.76,43.56,43.54,43.42,43.31],
+        lineData3: [,,,,,,,,46.82,48.14,48.57],
+        lineData4: [45.18,45.2,45.37,45.81,46.13,46.54,47.31,47.3,47.31,47.35,47.6],
+        lineData5: [45.16,45.75,45.44,45.57,45.8,46.25,46.3,46.43,46.8,47.02,47.31],
       }
     },
     mounted(){
@@ -50,7 +59,8 @@
         }
 
         me.drawCityPie(totalJson);
-        me.drawCityBar();
+        me.drawLine();
+        // me.drawCityBar();
         me.city = me.second;
       },
       drawCityPie(totalJson){
@@ -199,6 +209,143 @@
         });
       },
 
+      drawLine(){
+        let me = this;
+        // 基于准备好的dom，初始化echarts实例
+        let userAnalysisLine = me.$echarts.init(document.getElementById('cityBar'));
+        // 绘制图表
+        userAnalysisLine.setOption({
+          color: [
+            '#00A0E9',
+            '#EEAF00',
+            '#EB595F',
+            '#9FB934',
+            '#B15BFF',
+            '#ffb980',
+            '#FF5809',
+            '#2ec7c9',
+          ],
+          // tooltip: {
+          //   trigger: 'axis',
+          //   formatter: '{b}岁<br/>{a0}:{c0}<br/>{a1}:{c1}<br/>{a2}:{c2}<br/>{a3}:{c3}'
+          // },
+          tooltip: {
+            show: true,
+            trigger: 'axis',
+            // formatter: '{b}<br/>{a0}:{c0}%<br/>{a1}:{c1}%<br/>{a2}:{c2}%<br/>',
+            position: function (pos, params, dom, rect, size) {
+              // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+              var obj = {top: 60};
+              obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = '10%';
+              return obj;
+            },
+            textStyle:{
+              align:'left',
+            },
+          },
+          legend: {
+            data: me.cityDistributionPage.detailListSeriesName,
+            itemHeight: 6,
+            textStyle: {
+              color: 'grey'
+            },
+            // orient: 'vertical',
+            // top: '10%',
+            left: '10%',
+            right: '10%'
+          },
+          grid: {
+            left: '16%',
+            right: '9%',
+            top: '25%',
+            bottom: '18%',
+            // containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap:false,
+            data:me.xAxisData,
+            splitLine:{
+              show: true,
+              lineStyle: {
+                color: ['#CCECFB'],
+                opacity: 0.7,
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#00A0E9',
+                opacity: 0.7,
+              },
+            },
+            axisLabel :{
+              color: '#666',
+              interval: 0,
+            },
+            nameTextStyle: {
+              color: '#BEBEBE'
+            },
+          },
+          yAxis: {
+            type: 'value',
+            splitLine:{
+              show: true,
+              lineStyle: {
+                color: ['#CCECFB'],
+                opacity: 0.7,
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#00A0E9',
+              }
+            },
+            axisLabel :{
+              formatter: '{value}%',
+              color: '#666'
+            },
+            nameTextStyle: {
+              color: '#BEBEBE',
+            },
+            min: 30,
+            // max:60,
+            // splitNumber:6
+          },
+          series: [
+            {
+              name:me.cityDistributionPage.detailListSeriesName[0],
+              type:'line',
+              data:me.lineData,
+            },
+            {
+              name:me.cityDistributionPage.detailListSeriesName[1],
+              type:'line',
+              data:me.lineData1,
+            },
+            {
+              name:me.cityDistributionPage.detailListSeriesName[2],
+              type:'line',
+              data:me.lineData2,
+            },
+            {
+              name:me.cityDistributionPage.detailListSeriesName[3],
+              type:'line',
+              data:me.lineData3,
+            },
+            {
+              name:me.cityDistributionPage.detailListSeriesName[4],
+              type:'line',
+              data:me.lineData4,
+            },
+            {
+              name:me.cityDistributionPage.detailListSeriesName[5],
+              type:'line',
+              data:me.lineData5,
+            }
+          ]
+        });
+      },
+
       drawCityBar(){
         let me = this;
         // 基于准备好的dom，初始化echarts实例
@@ -274,11 +421,6 @@
             barWidth: 6,
             stack: '总量',
           },{
-            data: me.cityDistributionPage.sixthCityNum,
-            type: 'bar',
-            barWidth: 6,
-            stack: '总量',
-          },{
             data: me.cityDistributionPage.secondCityNum,
             type: 'bar',
             barWidth: 6,
@@ -295,6 +437,11 @@
             stack: '总量',
           },{
             data: me.cityDistributionPage.fifthCityNum,
+            type: 'bar',
+            barWidth: 6,
+            stack: '总量',
+          },{
+            data: me.cityDistributionPage.sixthCityNum,
             type: 'bar',
             barWidth: 6,
             stack: '总量',
@@ -333,6 +480,23 @@
     padding: 0.2rem 0.3rem 0.2rem 0.3rem;
     font-size: 0.32rem;
     color: #444
+  }
+
+  .subTitle2 {
+    width: 100%;
+    text-align: left;
+    margin-left:8%;
+    /*margin-top: 3%;*/
+    font-size: 0.48rem;
+    color: #444;
+    font-weight: bold
+  }
+
+  .desc {
+    color: #444;
+    text-align: left;
+    margin-left: 8%;
+    margin-top: 1%;
   }
 
   #newCity {

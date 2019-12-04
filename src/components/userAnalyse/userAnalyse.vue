@@ -23,7 +23,7 @@
     <div id="mainAge">
         整体来看，<span> 20-35岁 </span>购车用户占比<br/>较年初有所<span> 降低</span>。
     </div>
-    <div class="page">3/20</div>
+    <div class="page">3/19</div>
   </div>
 </template>
 
@@ -253,7 +253,7 @@
             nameTextStyle: {
               color: '#BEBEBE',
             },
-            min: 40,
+            min: 35,
             // max:60,
             // splitNumber:6
           },

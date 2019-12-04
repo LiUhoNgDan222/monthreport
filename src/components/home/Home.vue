@@ -21,8 +21,8 @@
           <p class="item cover"></p>
           <p class="menuTitle">目录</p>
           <p class="menuItem" @click="changePage(2)" :style="bg1">总体概况</p>
-          <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">CS75-PLUS新车<br/>分析专题</p>
-          <p class="menuItem menuItem1" @click="changePage(15)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
+          <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">CS75-PLUS新车分析<br/>专题(远程座椅加热分析)</p>
+          <p class="menuItem menuItem1" @click="changePage(14)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
 <!--          <div class="menuItem menuItem1" :style="bg3">-->
 <!--            <p @click="changePage(13)">国庆出游专题</p>-->
 <!--            <ul>-->
@@ -63,10 +63,6 @@
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
           <MainCity :cityDistributionPage="cityDistributionPage" ref="cityDistributionPageRef"></MainCity>
         </swiper-slide>
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/远程控制成功率.png" alt="">-->
-<!--        </swiper-slide>-->
         <swiper-slide :style="bg">
           <p class="item cover"></p>
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
@@ -120,38 +116,6 @@
 <!--        <swiper-slide style="background: #004595;overflow: hidden">-->
 <!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
 <!--          <img class="image" src="./img/远程控制&incall活跃分析.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/用户首个使用的远程控制功能.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/用户最爱使用的远程控制功能.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/用户反馈分析.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/智问小安用户咨询分析.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/用户首个智问小安咨询问题类别.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/车辆故障分析.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/首次故障的里程.png" alt="">-->
-<!--        </swiper-slide>-->
-<!--        <swiper-slide style="background: #004595;overflow: hidden">-->
-<!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
-<!--          <img class="image" src="./img/新CS75驾驶功能分析专题.png" alt="">-->
 <!--        </swiper-slide>-->
         <swiper-slide :style="bg">
           <p class="item cover"></p>
@@ -540,9 +504,6 @@
           backgroundImage: "url(" + require("./img/home.png") + ")",
           backgroundSize: "100% 100%"
         },
-        imgBg1: {
-          backgroundImage: "url(" + require("./img/远程控制成功率.png") + ")",
-        },
         bg: {
           backgroundImage: "url(" + require("@/components/home/img/main.jpg") + ")",
           backgroundSize: "100% 100%"
@@ -621,14 +582,14 @@
           dateEnd: '',
         },
         userNumSeriesList: {
-          accUserNum: 234416,
-          newUserNum : 23561,
-          statisMonth: '10月',
+          accUserNum: 264363,
+          newUserNum : 28325,
+          statisMonth: '11月',
           totalUserNum: '',
-          totalItem: ['CS75-PLUS','新CS75','CS35-PLUS','CS85-COUPE','逸动','CS95','睿骋CC','CS55','CS75'],
-          totalData: [9913,6958,3214,1860,1038,309,133,83,80,],
-          qoq: 8.7,
-          yoy: 102
+          totalItem: ['CS75-PLUS','新CS75','CS35-PLUS','CS85-COUPE','逸动','睿骋CC','CS55-PLUS','CS95','CS75','CS55',],
+          totalData: [13068,7088,3225,1941,1100,937,676,370,50,46,],
+          qoq: 11,
+          yoy: 184
         },
         trendAnalyseList: {
           monthList: [],
@@ -654,20 +615,20 @@
           mainUserAgeRate: '--',
           maxUserAge: '--',
           ageRange: ['1-20','20-30','30-40','40-50','50以上'],
-          userNum: [1974,76764,76273,44486,17767],
+          userNum: [2588,96303,93554,53829,21602],
           maleRate: 4.1,
           femaleRate: 1,
           carNameOne: '',
           carNameTwo: '',
           carNameThree: '',
           carNameFour: '',
-          ageItem: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月',],
-          ageDataOne: [56.1,55.98,54.93,53.97,53.42,53.37,53.41,53.4,53.5,53.69],
-          ageDataTwo: [61.57,60.19,57.22,56.37,55.24,54.11,53.44,53.28,53.23,53.38],
-          ageDataThree: [61.01,60.87,59.33,58.57,57.93,57.87,57.66,57.46,57.58,57.47],
-          ageDataFour: [,,,,,,,,57.8,58.97],
-          ageDataFive: [51.23,48.39,43.19,43.91,44.24,46.83,47.12,48.08,47.52,47.44],
-          ageDataSix: [74.35,73.59,72.65,72.22,71.89,71.2,71.44,71.67,71.99,72.33],
+          ageItem: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月'],
+          ageDataOne: [56.1,55.98,54.93,53.97,53.42,53.37,53.41,53.4,53.5,53.69,51.55],
+          ageDataTwo: [61.57,60.19,57.22,56.37,55.24,54.11,53.44,53.28,53.23,53.38,47.18],
+          ageDataThree: [61.01,60.87,59.33,58.57,57.93,57.87,57.66,57.46,57.58,57.47,55.23],
+          ageDataFour: [,,,,,,,,57.8,58.97,57.52],
+          ageDataFive: [51.23,48.39,43.19,43.91,44.24,46.83,47.12,48.08,47.52,47.44,36.71],
+          ageDataSix: [74.35,73.59,72.65,72.22,71.89,71.2,71.44,71.67,71.99,72.33,70.87],
           sexRatio: 1,
           detailListSeriesName: ['逸动','全新CS35plus','CS55','新CS75'],
           ageRange1: [],
@@ -692,14 +653,14 @@
           mainUserAgeRate: '--',
           maxUserAge: '--、--',
           allListCityType: ['一线','新一线','二线','三线','四线','五线'],
-          allListResidentNum: [9556,40105,33211,36568,32096,30236],
-          detailListSeriesName: ['逸动','CS35','CS55','新CS75','CS75-PLUS','CS95',],
-          firstCityNum: [5,3,8,5,3,14],
-          secondCityNum: [26,19,26,21,35,27],
-          thirdCityNum: [18,17,15,19,17,15],
-          fourthCityNum: [20,22,19,20,16,16],
-          fifthCityNum: [19,21,16,17,16,14],
-          sixthCityNum: [12,18,16,18,13,14],
+          allListResidentNum: [13313,56116,48577,50260,44497,41805],
+          detailListSeriesName: ['CS35','CS55','新CS75','CS75-PLUS','CS95','逸动',],
+          firstCityNum: [5.4,3.4,8.5,4.8,6.2,13.4],
+          secondCityNum: [26.5,19.4,27,20.6,23.2,25.4],
+          thirdCityNum: [18.3,17.9,15.6,20,20.7,15.7],
+          fourthCityNum: [20,21.5,18.4,20.1,18.4,16.4],
+          fifthCityNum: [18.3,20.6,15.4,17.4,16.4,14.6],
+          sixthCityNum: [11.4,17.1,15,18.2,15.1,14.5],
         },
         seriesOilCost: {
           seriesAvgOilCostsItem: [],
@@ -932,7 +893,7 @@
         let timeGap = (me.swiperTimeEnd.getTime()-me.swiperTimeStart.getTime())/1000;
         let index = this.swiper.activeIndex + 1;
         me.swiperTimeStart = new Date();
-        _czc.push(["_trackEvent",'10月月报','浏览页面',index.toString(),timeGap.toString(),'']);
+        _czc.push(["_trackEvent",'11月月报','浏览页面',index.toString(),timeGap.toString(),'']);
       },
 
       changePage: function(index) {

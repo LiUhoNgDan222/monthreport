@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">遥控泊车(功能搭载754辆车)</div>
+    <div id="subTitle1">遥控泊车(功能搭载2375辆车)</div>
     <div class="subTitle2">月使用车辆数</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -30,12 +30,12 @@
         barHeight1: window.innerHeight * 0.20,
         barHeight2: window.innerHeight * 0.28,
         color: ['#00A0E9','#EEAF00','#EB595F','#9FB934','#B15BFF'],
-        lineData: [208, 170,146,],
+        lineData: [208, 170,157,154,],
         legend: ['单车平均月使用次数','单车平均月驾驶次数','占比'],
-        xAxisData: ['8月','9月','10月'],
-        barNum: [0.79, 0.61,0.49,],
-        barNum1: [336.46, 273.91,335.86],
-        lineNum: [0.24, 0.22,0.15,],
+        xAxisData: ['8月','9月','10月','11月'],
+        barNum: [2.26, 2,1.97,1.64],
+        barNum1: [1185.2, 1490.1,1829.1,1714.2],
+        lineNum: [0.19, 0.13,0.11,0.1],
       }
     },
     mounted(){
