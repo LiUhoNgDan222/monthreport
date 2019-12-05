@@ -14,9 +14,9 @@
     <div class="subTitle2">平均单车月使用总次数</div>
     <div id="parking3" :style="{width: '100%', height: barHeight2+'px', margin: '2% 0 0 0'}"></div>
     <div class="content">
-      遥控泊车功能月使用车辆数和次数有<span> 降低 </span>趋势。
+      遥控泊车的月使用车辆数和次数<span> 逐月下降</span>。
     </div>
-    <div class="page">20/20</div>
+    <div class="page">19/19</div>
 
   </div>
 </template>
@@ -314,12 +314,13 @@
     margin-left: 7%;
     text-align: left;
     width: 100%;
+    font-family: "Microsoft YaHei";
   }
 
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;

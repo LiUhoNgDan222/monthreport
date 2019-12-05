@@ -18,9 +18,9 @@
       泊车成功率=泊车成功次数/使用次数<br>
     </p>
     <div class="content">
-      <span>场景不满足及人为干预退出率 </span>逐月增高，可以考虑在信号上进一步区分场景或人为退出原因。
+      可能由于用户对用车场景有进一步了解，<br/>场景不满足或人为干预退出率<span>下降明显</span>，<br/>泊车成功率明显<span> 提高</span>。
     </div>
-    <div class="page">19/20</div>
+    <div class="page">18/19</div>
 
   </div>
 </template>
@@ -214,12 +214,13 @@
     margin-left: 7%;
     text-align: left;
     width: 100%;
+    font-family: "Microsoft YaHei";
   }
 
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;

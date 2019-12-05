@@ -14,9 +14,9 @@
     <div class="subTitle2">平均单车月使用总次数</div>
     <div id="parking1" :style="{width: '100%', height: barHeight2+'px', margin: '2% 0 0 0'}"></div>
     <div class="content">
-      自动泊车功能月使用车辆数和次数有降低趋势，可能是功能的<span> 复用率较低</span>。
+      <span>11月 </span>自动泊车使用车辆数<span> 减少</span>，但人均使用次数<span> 提高</span>，这些留存用户是泊车功能的核心用户。
     </div>
-    <div class="page">18/20</div>
+    <div class="page">17/19</div>
 
   </div>
 </template>
@@ -305,12 +305,13 @@
     margin-left: 7%;
     text-align: left;
     width: 100%;
+    font-family: "Microsoft YaHei";
   }
 
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;

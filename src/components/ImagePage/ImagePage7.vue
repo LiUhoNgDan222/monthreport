@@ -5,10 +5,9 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      <span>新车</span>用户的首个咨询问题均来自应用推荐内容；<br/>
-      并且重点关注<span>APP远程控车</span>的操作问题，建议优化经销商及incall应用界面的<span>用户操作引导</span>。
+      <span>数据一致性 </span>一直是用户最关注的问题，远程控制的成功率提高后用户反馈也相应<span> 降低</span>。
     </div>
-    <div class="page">11/20</div>
+    <div class="page">11/19</div>
   </div>
 </template>
 
@@ -52,7 +51,7 @@
     color: #444
   }
   .phonePic {
-    width: 90%;
+    width: 85%;
     /*width: 7.7rem;*/
     /*height: 9rem;*/
     margin-top: 3%;

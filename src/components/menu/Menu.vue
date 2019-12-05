@@ -5,7 +5,7 @@
       <ul class="menuList" :style="{width: '6rem', height: menuHeight+'px'}" @click.stop="">
         <li class="menuListItem" @click.stop="change(2)"><img class="listIcon" :src=imgList1[0] /><span>总体概况</span></li>
         <li class="menuListItem" @click.stop="change(6)"><img class="listIcon" :src=imgList1[1] /><span>CS75-PLUS新车分析专题</span></li>
-        <li class="menuListItem" @click.stop="change(15)"><img class="listIcon" :src=imgList1[2] /><span>新CS75驾驶功能分析专题</span></li>
+        <li class="menuListItem" @click.stop="change(14)"><img class="listIcon" :src=imgList1[2] /><span>新CS75驾驶功能分析专题</span></li>
       </ul>
     </div>
   </div>
@@ -52,13 +52,13 @@
           me.imgList1[3] = require("./img/4-1.png");
           me.imgList1[4] = require("./img/5-1.png");
         }
-        if(newValue <= 14 && newValue >= 6){
+        if(newValue <= 13 && newValue >= 6){
           me.imgList1[0] = require("./img/1-1.png");
           me.imgList1[1] = require("./img/2-2.png");
           me.imgList1[2] = require("./img/3-1.png");
           me.imgList1[3] = require("./img/4-1.png");
           me.imgList1[4] = require("./img/5-1.png");
-        }else if(newValue <= 21 && newValue >= 15){
+        }else if(newValue <= 20 && newValue >= 14){
           me.imgList1[2] = require("./img/3-2.png");
           me.imgList1[0] = require("./img/1-1.png");
           me.imgList1[1] = require("./img/2-1.png");

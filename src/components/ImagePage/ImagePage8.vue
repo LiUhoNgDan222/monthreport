@@ -4,11 +4,10 @@
     <div id="title">CS75-PLUS新车分析专题</div>
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
-<!--    <div class="content">-->
-<!--      <span>新车</span>用户的首个咨询问题均来自应用推荐内容；<br/>-->
-<!--      并且重点关注<span>APP远程控车</span>的操作问题，建议优化经销商及incall应用界面的<span>用户操作引导</span>。-->
-<!--    </div>-->
-    <div class="page">12/20</div>
+    <div class="content">
+      刚购车时，用户偏好功能使用问题咨询，两个月后偏好<span> 胎压</span>、<span>车况 </span>等车辆信息咨询。
+    </div>
+    <div class="page">12/19</div>
   </div>
 </template>
 
@@ -52,7 +51,7 @@
     color: #444
   }
   .phonePic {
-    width: 90%;
+    width: 85%;
     /*width: 7.7rem;*/
     /*height: 9rem;*/
     margin-top: 3%;

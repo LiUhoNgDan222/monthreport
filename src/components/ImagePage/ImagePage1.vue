@@ -5,7 +5,7 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      <span>远程打开空调 </span>的成功率较低，且失败原因多为用户在<span>车内操作远控 </span>，建议加强功能使用指导。
+      远程控制成功率<span> 逐月增高</span>。
     </div>
     <div class="page">5/19</div>
   </div>
@@ -51,7 +51,7 @@
     color: #444
   }
   .phonePic {
-    width: 90%;
+    width: 86%;
     /*width: 7.7rem;*/
     /*height: 9rem;*/
     margin-top: 2%;

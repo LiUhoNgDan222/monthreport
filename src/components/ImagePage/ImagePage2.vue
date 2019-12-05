@@ -5,9 +5,9 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      远程控制功能对incall活跃率<span>影响较小</span>；<span>购车第二个月</span>，incall和远程控制活跃情况皆有<span>下降</span>。
+      自<span>购车第二个月</span>，incall和远程控制活跃情况<span> 下降</span>，第三个月的留存用户可以定义为核心用户。
     </div>
-    <div class="page">6/20</div>
+    <div class="page">6/19</div>
   </div>
 </template>
 

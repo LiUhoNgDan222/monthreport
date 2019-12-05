@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">ACC自适应巡航(功能搭载16481辆车)</div>
+    <div id="subTitle1">ACC自适应巡航(功能搭载4831辆车)</div>
     <div class="subTitle2">单车平均月使用总时长</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -14,9 +14,10 @@
     <div class="subTitle2">单车平均使用时长(单次行程)</div>
     <div id="accDuration1" :style="{width: '100%', height: barHeight2+'px', margin: '2% 0 0 0'}"></div>
     <div class="content">
-      用户<span> 单次行程 </span>使用功能<span> 时长短</span>，<br/>趋势平稳。
+      用户在<span> 高速路 </span>使用功能，<br/>
+      故使用时长<span> 偏短 </span>，且波动不大。
     </div>
-    <div class="page">17/20</div>
+    <div class="page">16/19</div>
 
   </div>
 </template>
@@ -34,11 +35,11 @@
         legend1: ['单车平均使用时长','单车平均驾驶时长','占比'],
         xAxisData: ['7月','8月','9月','10月','11月'],
         barNum: [9.78, 24.03,23.35,23.46,21.11],
-        barNum1: [2161.3, 725.4,1260.6,1347.7,1943.2],
-        lineNum: [0.45, 3.31,1.85,1.74,1.09],
-        barNum2: [0.000022, 0.000047,0.000044,0.000039,0.000039],
-        barNum3: [0.0023, 0.0009,0.0011,0.0009,0.0012],
-        lineNum1: [0.94, 5.17,4.12,4.28,3.18],
+        barNum1: [203.62, 208.66,222.46,238.7,243.98],
+        lineNum: [4.8, 11.52,10.5,9.83,8.65],
+        barNum2: [0.036, 0.092,0.084,0.012,0.077],
+        barNum3: [2.53, 2.73,2.71,2.78,2.58],
+        lineNum1: [1.42, 3.37,3.1,4.47,3],
       }
     },
     mounted(){
@@ -181,7 +182,18 @@
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%'
+                // formatter: '{c}%',
+                formatter: function(params) {
+                  let str;
+                  if(params.value < 12 && params.value > 10.5){
+                    str = '      ' +params.value + '%';
+                  }else if(params.value < 10.6 && params.value > 4){
+                    str = '  ' + params.value + '%';
+                  }else{
+                    str = params.value + '%';
+                  }
+                  return str;
+                },
               }
             },
             data: this.lineNum,
@@ -316,11 +328,22 @@
             label: {
               normal: {
                 show: true,
-                position: 'top',
+                position: 'right',
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%'
+                // formatter: '{c}%',
+                formatter: function(params) {
+                  let str;
+                  if(params.value < 3.4 && params.value > 3.1){
+                    str = params.value + '%\n';
+                  }else if(params.value < 3.2 && params.value > 3){
+                    str = '\n' + params.value + '%';
+                  }else{
+                    str = params.value + '%';
+                  }
+                  return str;
+                },
               }
             },
             data: this.lineNum1,
@@ -355,6 +378,7 @@
   #subTitle1 {
     font-size: 0.4rem;
     color: #00a0e9;
+    font-family: "Microsoft YaHei";
     /*font-weight: bold;*/
     margin-left: 7%;
     text-align: left;
@@ -364,7 +388,7 @@
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;

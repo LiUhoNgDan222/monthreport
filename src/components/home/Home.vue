@@ -21,8 +21,10 @@
           <p class="item cover"></p>
           <p class="menuTitle">目录</p>
           <p class="menuItem" @click="changePage(2)" :style="bg1">总体概况</p>
-          <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">CS75-PLUS新车分析<br/>专题(远程座椅加热分析)</p>
-          <p class="menuItem menuItem1" @click="changePage(14)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
+          <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">
+            CS75-PLUS新车<br/>分析专题<br/>
+            <span style="font-size: 0.36rem;font-weight: normal;">(远程座椅加热分析)</span></p>
+          <p class="menuItem menuItem2" @click="changePage(14)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
 <!--          <div class="menuItem menuItem1" :style="bg3">-->
 <!--            <p @click="changePage(13)">国庆出游专题</p>-->
 <!--            <ul>-->
@@ -108,11 +110,11 @@
           <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
           <ImagePage9></ImagePage9>
         </swiper-slide>
-        <swiper-slide :style="bg">
-          <p class="item cover"></p>
-          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>
-          <ImagePage10></ImagePage10>
-        </swiper-slide>
+<!--        <swiper-slide :style="bg">-->
+<!--          <p class="item cover"></p>-->
+<!--          <Menu ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></Menu>-->
+<!--          <ImagePage10></ImagePage10>-->
+<!--        </swiper-slide>-->
 <!--        <swiper-slide style="background: #004595;overflow: hidden">-->
 <!--          <MenuImage ref="menuRef" @changePage="changePage" :clickFlag="clickFlag" :index="index"></MenuImage>-->
 <!--          <img class="image" src="./img/远程控制&incall活跃分析.png" alt="">-->
@@ -1796,6 +1798,10 @@
   }
 
   .menuItem1 {
+    height:3.3rem;
+    /*line-height: normal;*/
+  }
+  .menuItem2 {
     height:2.8rem;
     /*line-height: normal;*/
   }

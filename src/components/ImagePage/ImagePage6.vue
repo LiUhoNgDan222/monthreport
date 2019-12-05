@@ -5,9 +5,9 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      车况日常查询类呈持续<span> 增长 </span>趋势，但增值服务类和APP控车码介绍从购车第二个月起关注度<span> 降低</span>。
+      远程座椅加热功能高档的使用情况<span> 远远优于 </span>低档。
     </div>
-    <div class="page">10/20</div>
+    <div class="page">10/19</div>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">ACC自适应巡航(功能搭载16481辆车)</div>
+    <div id="subTitle1">ACC自适应巡航(功能搭载4831辆车)</div>
     <div class="subTitle2">月使用车辆数</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -14,9 +14,9 @@
     <div class="subTitle2">单车平均月使用次数</div>
     <div id="acc" :style="{width: '100%', height: barHeight2+'px', margin: '2% 0 0 0'}"></div>
     <div class="content">
-      <span>6月底 </span>才开始采集数据，7月用户还在ota，数据尚未稳定，因此使用车辆数和次数都<span> 较低</span>。
+      用户月使用趋势比较<span> 稳定 </span>，波动不大。
     </div>
-    <div class="page">15/20</div>
+    <div class="page">14/19</div>
 
   </div>
 </template>
@@ -34,8 +34,8 @@
         legend: ['单车平均月使用次数','单车平均月驾驶次数','占比'],
         xAxisData: ['7月','8月','9月','10月','11月'],
         barNum: [11.52, 27.87,22.55,25.26,20,],
-        barNum1: [1636, 873,978,1002,1101,],
-        lineNum: [0.7, 3.19,2.31,2.52,1.82,],
+        barNum1: [118.23, 128.58,135.34,148.9,141.36,],
+        lineNum: [9.74, 21.67,16.66,16.97,14.15,],
       }
     },
     mounted(){
@@ -254,20 +254,20 @@
             label: {
               normal: {
                 show: true,
-                position: 'top',
+                position: 'bottom',
                 textStyle: {
                   fontSize: 10,
                 },
-                formatter: '{c}%',
-                // formatter: function(params) {
-                //   let str;
-                //   if(params.value < 2.4 && params.value > 2){
-                //     str = '\n\n' + params.value + '%';
-                //   }else{
-                //     str = params.value + '%';
-                //   }
-                //   return str;
-                // },
+                // formatter: '{c}%',
+                formatter: function(params) {
+                  let str;
+                  if(params.value < 22 && params.value > 21){
+                    str = '    ' + params.value + '%';
+                  }else{
+                    str = '  ' +params.value + '%';
+                  }
+                  return str;
+                },
               }
             },
             data: this.lineNum,
@@ -301,6 +301,7 @@
 
   #subTitle1 {
     font-size: 0.4rem;
+    font-family: "Microsoft YaHei";
     color: #00a0e9;
     /*font-weight: bold;*/
     margin-left: 7%;
@@ -311,7 +312,7 @@
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;

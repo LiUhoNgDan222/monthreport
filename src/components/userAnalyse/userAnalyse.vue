@@ -21,7 +21,8 @@
     <div id="userLine" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>
 <!--    <div id="userBar" :style="{width: '100%', height: lineHeight+'px',margin:'5px 0 0 0 '}"></div>-->
     <div id="mainAge">
-        整体来看，<span> 20-35岁 </span>购车用户占比<br/>较年初有所<span> 降低</span>。
+      年轻用户群体（20-35岁）对长安汽车<br/>
+      购买力<span> 下降 </span>，尤其是<span> CS95</span>。
     </div>
     <div class="page">3/19</div>
   </div>
@@ -162,14 +163,12 @@
         // 绘制图表
         userAnalysisLine.setOption({
           color: [
-            '#00A0E9',
-            '#EEAF00',
             '#EB595F',
-            '#9FB934',
-            '#B15BFF',
             '#ffb980',
-            '#FF5809',
-            '#2ec7c9',
+            '#EEAF00',
+            '#004595',
+            '#B15BFF',
+            '#00A0E9',
           ],
           // tooltip: {
           //   trigger: 'axis',
@@ -471,9 +470,10 @@
     text-align: left;
     margin-left:8%;
     margin-top: 3%;
-    font-size: 0.48rem;
-    color: #444;
-    font-weight: bold
+    font-size: 0.4rem;
+    color: #00a0e9;
+    font-family: "Microsoft YaHei";
+    /*font-weight: bold;*/
   }
 
   .desc {

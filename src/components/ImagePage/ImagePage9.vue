@@ -1,14 +1,14 @@
 <template>
   <div>
     <!--<Drawer></Drawer>-->
-    <div id="title">CS75-PLUS新车分析专题</div>
+    <div id="title">新CS75驾驶功能分析专题</div>
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
 <!--    <div class="content">-->
 <!--      <span>新车</span>用户的首个咨询问题均来自应用推荐内容；<br/>-->
 <!--      并且重点关注<span>APP远程控车</span>的操作问题，建议优化经销商及incall应用界面的<span>用户操作引导</span>。-->
 <!--    </div>-->
-    <div class="page">13/20</div>
+    <div class="page">13/19</div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@
     name: "ImagePage9",
     data() {
       return {
-        phoneBg: require("./img/9.png"),
+        phoneBg: require("./img/9.jpg"),
       }
     },
   }

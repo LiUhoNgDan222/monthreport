@@ -2,7 +2,7 @@
   <div>
     <!--<Drawer></Drawer>-->
 
-    <div id="title">总体概览</div>
+    <div id="title">总体概况</div>
     <div class="subtitle2">智能网联用户转化</div>
 
     <div id="userTurn" :style="{width: '90%', height: barHeight1+'px', margin: '0 0 20px 0'}"></div>
@@ -10,8 +10,8 @@
     <div class="subtitle2">主要车型实名认证率趋势分析</div>
     <div id="userTrend" :style="{width: '100%', height: barHeight2+'px', margin: '10px 0 0 0'}"></div>
     <div class="boxStyle">
-      因为一级经销商的<span> 实名认证考核策略</span>，<br/>
-      CS75-PLUS实名认证率接近100%，<br/>可以考虑<span> 扩展 </span>到其他渠道。
+      各车型实名认证率均<span> 下降</span>，<br/>
+      其中<span> CS75-PLUS </span>下降幅度最大。
     </div>
     <div class="page">2/19</div>
   </div>
@@ -111,14 +111,12 @@
         // 绘制图表
         monthTrendLine.setOption({
           color: [
-            '#00A0E9',
-            '#EEAF00',
             '#EB595F',
-            '#9FB934',
-            '#B15BFF',
             '#ffb980',
-            '#FF5809',
-            '#2ec7c9',
+            '#EEAF00',
+            '#004595',
+            '#B15BFF',
+            '#00A0E9',
           ],
           grid: {
             left: '16%',
@@ -289,8 +287,9 @@
     margin-left:5%;
     margin-top: 5%;
     font-size: 0.4rem;
-    color: #444;
-    font-weight: bold
+    color: #00a0e9;
+    /*font-weight: bold*/
+    font-family: "Microsoft YaHei";
   }
 
   #definition {

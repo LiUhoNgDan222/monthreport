@@ -5,9 +5,9 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      在购车后第二个月，用户对<span> 查询车况 </span>使用频次 <span>降低 </span>，<span>锁闭车门 </span>使用频次 <span>升高</span>。
+      凛冬已至，远程座椅加热功能活跃情况<br/>明显<span> 提高</span>。
     </div>
-    <div class="page">8/20</div>
+    <div class="page">8/19</div>
   </div>
 </template>
 

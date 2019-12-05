@@ -5,9 +5,9 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      新车用户的首个远控操作与应用摆放顺序一致。
+      用户对远程控制功能在购车第三个月趋于<span> 稳定</span>，集中在<span> 查询车况</span>、<span> 解闭车门 </span>和<span> 开关空调 </span>。
     </div>
-    <div class="page">7/20</div>
+    <div class="page">7/19</div>
   </div>
 </template>
 

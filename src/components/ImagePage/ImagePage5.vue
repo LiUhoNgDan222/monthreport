@@ -5,9 +5,10 @@
 <!--    <div id="subTitle1">用户热爱品牌：oppo、vivo、苹果</div>-->
     <img :src="phoneBg" class="phonePic"/>
     <div class="content">
-      反馈数量反映关注程度，数据说明用户关注<span> 远程控制</span>、<span>增值服务</span>、<span>远程升级</span>三个领域。
+      北京、新疆、内蒙古等北方地区用户<br/>
+      喜爱使用<span>远程座椅加热功能</span>。
     </div>
-    <div class="page">9/20</div>
+    <div class="page">9/19</div>
   </div>
 </template>
 
@@ -52,7 +53,7 @@
     color: #444
   }
   .phonePic {
-    width: 90%;
+    width: 85%;
     /*width: 7.7rem;*/
     /*height: 9rem;*/
     margin-top: 3%;

@@ -7,7 +7,7 @@
     <div class="desc">指居住城市在一线、新一线、二线的用户</div>
     <div id="cityBar" :style="{width: '100%', height: barHeight+'px', margin: '0'}"></div>
     <div class="mainCity">
-      <span>CS95 </span>在<span> 一线城市 </span>占比最大，<br/>符合高端旗舰车型的产品定位。
+      经济水平较高城市占比逐渐<span> 上升</span>。
     </div>
     <p id="newCity">
       {{city}}
@@ -216,14 +216,12 @@
         // 绘制图表
         userAnalysisLine.setOption({
           color: [
-            '#00A0E9',
-            '#EEAF00',
             '#EB595F',
-            '#9FB934',
-            '#B15BFF',
             '#ffb980',
-            '#FF5809',
-            '#2ec7c9',
+            '#EEAF00',
+            '#004595',
+            '#B15BFF',
+            '#00A0E9',
           ],
           // tooltip: {
           //   trigger: 'axis',
@@ -487,9 +485,10 @@
     text-align: left;
     margin-left:8%;
     /*margin-top: 3%;*/
-    font-size: 0.48rem;
-    color: #444;
-    font-weight: bold
+    font-size: 0.4rem;
+    color: #00a0e9;
+    font-family: "Microsoft YaHei";
+    /*font-weight: bold;*/
   }
 
   .desc {

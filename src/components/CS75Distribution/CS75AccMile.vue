@@ -3,7 +3,7 @@
     <!--<Drawer></Drawer>-->
 
     <div id="title">新CS75驾驶功能分析专题</div>
-    <div id="subTitle1">ACC自适应巡航(功能搭载16481辆车)</div>
+    <div id="subTitle1">ACC自适应巡航(功能搭载4831辆车)</div>
     <div class="subTitle2">单车平均月使用总里程</div>
 <!--    <div class="desc">-->
 <!--      国庆期间，新CS75的4738名用户中有<span> 1338 </span>名使用过自适应巡航，平均单车单日使用<span> 7.52 </span>次-->
@@ -14,9 +14,9 @@
     <div class="subTitle2">单车平均使用里程(单次行程)</div>
     <div id="accMile1" :style="{width: '100%', height: barHeight2+'px', margin: '2% 0 0 0'}"></div>
     <div class="content">
-      用户<span> 单次行程 </span>使用功能<span> 距离短</span>，<br/>平均不超过5km。
+      用户单次使用<span> 距离短</span>，但一个月总使用里程<br/>占驾驶里程的<span> 10%</span>。
     </div>
-    <div class="page">16/20</div>
+    <div class="page">15/19</div>
 
   </div>
 </template>
@@ -34,11 +34,11 @@
         legend1: ['单车平均使用里程','单车平均驾驶里程','占比'],
         xAxisData: ['7月','8月','9月','10月','11月'],
         barNum: [122.5, 340.5,281.9,339.4,237.5],
-        barNum1: [13380.49, 5245.22,7775.82,7989.34,7697.86],
-        lineNum: [0.92, 6.49,3.63,4.25,3.08],
-        barNum2: [0.00028, 0.00066,0.00053,0.00057,0.00044],
-        barNum3: [0.0091, 0.0029,0.0043,0.0039,0.0042],
-        lineNum1: [3.04, 22.38,12.31,14.47,10.6],
+        barNum1: [1145.55, 843.25,1186.91,1291.26,1078.74],
+        lineNum: [10.7, 40.38,23.75,26.29,22.01],
+        barNum2: [0.56, 1.76,1.43,2.51,1.13],
+        barNum3: [8.89, 8.77,8.91,8.88,8.87],
+        lineNum1: [6.32, 20,16,18.24,12.79],
       }
     },
     mounted(){
@@ -177,15 +177,15 @@
             label: {
               normal: {
                 show: true,
-                position: 'bottom',
+                position: 'top',
                 textStyle: {
                   fontSize: 10,
                 },
                 formatter: '{c}%',
                 // formatter: function(params) {
                 //   let str;
-                //   if(params.value < 160 && params.value > 100){
-                //     str = '\n\n' + params.value + '%';
+                //   if(params.value < 24 && params.value > 23){
+                //     str = '\n\n' +params.value + '%';
                 //   }else{
                 //     str = params.value + '%';
                 //   }
@@ -336,14 +336,17 @@
             label: {
               normal: {
                 show: true,
-                position: 'top',
+                position: 'bottom',
                 textStyle: {
                   fontSize: 10,
                 },
+                // formatter: '{c}%',
                 formatter: function(params) {
                   let str;
-                  if(params.value < 160 && params.value > 100){
-                    str = '\n\n' + params.value + '%';
+                  if(params.value < 7 && params.value > 6){
+                    str = '          ' + params.value + '%';
+                  }else if(params.value < 21 && params.value > 19){
+                    str = '    ' + params.value + '%';
                   }else{
                     str = params.value + '%';
                   }
@@ -382,6 +385,7 @@
 
   #subTitle1 {
     font-size: 0.4rem;
+    font-family: "Microsoft YaHei";
     color: #00a0e9;
     /*font-weight: bold;*/
     margin-left: 7%;
@@ -392,7 +396,7 @@
   .subTitle2 {
     font-size: 0.36rem;
     color: #444;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 2%;
     margin-left: 7%;
     text-align: left;
