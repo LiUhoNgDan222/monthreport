@@ -23,7 +23,7 @@
           <p class="menuItem" @click="changePage(2)" :style="bg1">总体概况</p>
           <p class="menuItem menuItem1" @click="changePage(6)" :style="bg2">
             CS75-PLUS新车<br/>分析专题<br/>
-            <span style="font-size: 0.36rem;font-weight: normal;">(远程座椅加热分析)</span></p>
+            <span class="menuDesc">(远程座椅加热分析)</span></p>
           <p class="menuItem menuItem2" @click="changePage(14)" :style="bg3">新CS75驾驶功能<br/>分析专题</p>
 <!--          <div class="menuItem menuItem1" :style="bg3">-->
 <!--            <p @click="changePage(13)">国庆出游专题</p>-->
@@ -1804,6 +1804,10 @@
   .menuItem2 {
     height:2.8rem;
     /*line-height: normal;*/
+  }
+  .menuDesc {
+    font-size: 0.36rem;
+    font-weight: normal;
   }
   .menuItem1 p {
     padding-top: 0.9rem;

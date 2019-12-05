@@ -13,11 +13,12 @@ import 'mint-ui/lib/style.css'
 import 'muse-ui/dist/muse-ui.css';
 
 Vue.use(VueAwesomeSwiper);
-Vue.use(axios);
+// Vue.use(axios);
 
 Vue.config.productionTip = false
-Vue.use(VueTouch, {name: 'v-touch'})
-Vue.prototype.$echarts = echarts
+Vue.use(VueTouch, {name: 'v-touch'});
+Vue.prototype.$echarts = echarts;
+Vue.prototype.$ajax = axios;
 
 /* eslint-disable no-new */
 new Vue({
